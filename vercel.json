@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/cart/:path*",      "destination": "https://an7pix-mc.myshopify.com/cart/:path*",      "permanent": false },
+    { "source": "/checkouts/:path*", "destination": "https://an7pix-mc.myshopify.com/checkouts/:path*", "permanent": false },
+    { "source": "/checkout",         "destination": "https://an7pix-mc.myshopify.com/checkout",         "permanent": false },
+    { "source": "/orders/:path*",    "destination": "https://an7pix-mc.myshopify.com/orders/:path*",    "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/athletic-wear",      "destination": "/athletic-wear.html" },
+    { "source": "/outdoor-collection", "destination": "/outdoor-collection.html" }
+  ]
+}

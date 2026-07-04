@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Outdoor Collection — BC Branded Co.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --cream: #f5f0e8;
+  --dark:  #0e0f0c;
+  --forest:#1a2518;
+  --pine:  #2d3d28;
+  --gold:  #c8a84b;
+  --orange: #E8541A;
+  --orange-light: #f07040;
+  --orange-dim: rgba(232,84,26,0.18);
+  --mist:  #8a9e8c;
+  --radius: 16px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--dark);
+  color: var(--cream);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 40px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14,15,12,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.nav-logo {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--cream);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--orange); }
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(245,240,232,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--cream); }
+.nav-back svg { width: 16px; height: 16px; }
+.nav-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--orange);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-shop-btn:hover { background: var(--orange-light); }
+
+/* ── HERO ── */
+.collection-hero {
+  margin-top: 68px;
+  padding: 72px 40px 56px;
+  background: linear-gradient(135deg, #0a110a 0%, #121c10 50%, #0a110a 100%);
+  border-bottom: 1px solid rgba(45,61,40,0.4);
+  position: relative;
+  overflow: hidden;
+}
+.collection-hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(45,61,40,0.4) 0%, transparent 70%);
+  pointer-events: none;
+}
+.collection-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 10%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(200,168,75,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(45,61,40,0.5);
+  border: 1px solid rgba(45,61,40,0.8);
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 20px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--mist);
+  border-radius: 50%;
+}
+.collection-hero h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.collection-hero h1 span { color: var(--mist); }
+.collection-hero p {
+  font-size: 16px;
+  color: rgba(245,240,232,0.6);
+  max-width: 520px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.hero-animals {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.animal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(26,37,24,0.7);
+  border: 1px solid rgba(138,158,140,0.2);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(245,240,232,0.7);
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+}
+.hero-stat-num {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--mist);
+}
+.hero-stat-lbl {
+  font-size: 11px;
+  color: rgba(245,240,232,0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+}
+.filter-btn {
+  padding: 7px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(245,240,232,0.6);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.filter-btn:hover { border-color: rgba(138,158,140,0.5); color: var(--cream); }
+.filter-btn.active {
+  background: var(--pine);
+  border-color: var(--mist);
+  color: var(--cream);
+}
+.filter-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: rgba(245,240,232,0.35);
+  white-space: nowrap;
+}
+
+/* ── PRODUCTS GRID ── */
+.products-section { padding: 48px 40px 80px; }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── PRODUCT CARD ── */
+.product-card {
+  background: #111410;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s, transform 0.3s;
+  }
+.product-card.visible {
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+  border-color: rgba(138,158,140,0.3);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+.product-img {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #161814;
+}
+.product-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+.product-card:hover .product-img img { transform: scale(1.04); }
+.product-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,10,8,0.88);
+  display: flex;
+  align-items: flex-end;
+  
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.product-card:hover .product-img-overlay { opacity: 1; }
+.picker { padding: 16px; width: 100%; }
+.picker-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.picker-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: flex-start;
+}
+.pick-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.pick-btn:hover, .pick-btn.loading {
+  background: var(--pine);
+  border-color: var(--mist);
+  color: #fff;
+}
+
+/* product info */
+.product-info { padding: 16px 18px 18px; }
+.product-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-bottom: 5px;
+}
+.product-name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cream);
+}
+.product-colors {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 80px;
+}
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.animal-badge {
+  display: inline-block;
+  background: rgba(45,61,40,0.7);
+  border: 1px solid rgba(138,158,140,0.3);
+  color: var(--mist);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 50px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo { font-size: 15px; font-weight: 800; color: var(--cream); }
+.footer-logo span { color: var(--orange); }
+.footer-copy { font-size: 12px; color: rgba(245,240,232,0.35); }
+.footer-link {
+  color: rgba(245,240,232,0.5);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--mist); }
+
+.overlay-bottom {
+  width: 100%;
+  padding: 10px 12px 13px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.78));
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.product-card:hover .overlay-bottom {
+  opacity: 1;
+  transform: translateY(0);
+}
+.overlay-colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ov-color-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  margin-right: 2px;
+}
+</style>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<a class="nav-back" href="index.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg>
+    Back to Home
+  </a>
+<a class="nav-logo" href="index.html">BC<span>.</span>Branded</a>
+<a class="nav-shop-btn" href="https://an7pix-mc.myshopify.com/collections/all" target="_blank">Shop All →</a>
+</nav>
+<!-- HERO -->
+<section class="collection-hero">
+<div class="hero-eyebrow">Outdoor Collection</div>
+<h1>Born to be<br/><span>Wild.</span></h1>
+<p>Every piece carries the spirit of British Columbia's wilderness — hand-picked designs inspired by the animals that call this place home.</p>
+<div class="hero-animals">
+<span class="animal-tag">🦅 Eagle</span>
+<span class="animal-tag">🐻 Bear</span>
+<span class="animal-tag">🐺 Wolf</span>
+<span class="animal-tag">🐋 Orca</span>
+</div>
+<div class="hero-stats">
+<div>
+<div class="hero-stat-num">18</div>
+<div class="hero-stat-lbl">Styles</div>
+</div>
+<div>
+<div class="hero-stat-num">4</div>
+<div class="hero-stat-lbl">Animals</div>
+</div>
+<div>
+<div class="hero-stat-num">BC</div>
+<div class="hero-stat-lbl">Made Wild</div>
+</div>
+</div>
+</section>
+<!-- FILTER BAR -->
+<div class="filter-bar">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="eagle">🦅 Eagle</button>
+<button class="filter-btn" data-filter="bear">🐻 Bear</button>
+<button class="filter-btn" data-filter="wolf">🐺 Wolf</button>
+<button class="filter-btn" data-filter="orca">🐋 Orca</button>
+<button class="filter-btn" data-filter="hoodie">Hoodies</button>
+<button class="filter-btn" data-filter="jacket">Windbreakers</button>
+<button class="filter-btn" data-filter="tee">Tees</button>
+<span class="filter-count">18 products</span>
+</div>
+<!-- PRODUCTS -->
+<section class="products-section">
+<div class="products-grid"><div class="product-card" data-cat="hoodie eagle"><div class="product-img">
+<img alt="Vancouver Eagle Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a109a8c33d99.jpg?v=1779473056"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-vancouver-eagle-edition" data-variants='{"S":"52913720885557","M":"52913720918325","L":"52913720754485","XL":"52913720787253","2XL":"52913720820021","3XL":"52913720852789"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Eagle</span></div>
+<div class="product-name">Vancouver — Eagle<br/>Edition</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie eagle"><div class="product-img">
+<img alt="Eagle Collection Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a109b32c4c2c.jpg?v=1779473223"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-eagle-collection" data-variants='{"S":"52913725243701","M":"52913725276469","L":"52913725112629","XL":"52913725145397","2XL":"52913725178165","3XL":"52913725210933"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Eagle</span></div>
+<div class="product-name">BC Branded — Eagle<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie wolf"><div class="product-img">
+<img alt="Wolf Collection Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a109bf44f92c.jpg?v=1779473419"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-wolf-collection" data-variants='{"S":"52913728258357","M":"52913728291125","L":"52913728323893","XL":"52913728356661","2XL":"52913728389429","3XL":"52913728422197"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Wolf</span></div>
+<div class="product-name">BC Branded — Wolf<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie orca"><div class="product-img">
+<img alt="Orca Collection Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a109d1c2c402.jpg?v=1779473713"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-orca-collection" data-variants='{"S":"52913734451509","M":"52913734484277","L":"52913734517045","XL":"52913734549813","2XL":"52913734582581","3XL":"52913734615349"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Orca</span></div>
+<div class="product-name">BC Branded — Orca<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie orca"><div class="product-img">
+<img alt="Vancouver Orca Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a109e6faa5d6.jpg?v=1779474051"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-vancouver-orca-collection" data-variants='{"S":"52913741857077","M":"52913741889845","L":"52913741726005","XL":"52913741758773","2XL":"52913741791541","3XL":"52913741824309"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Orca</span></div>
+<div class="product-name">Vancouver — Orca<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie bear"><div class="product-img">
+<img alt="Vancouver Bear Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a109f9955197.jpg?v=1779474350"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-vancouver-bear-collection" data-variants='{"S":"52913749066037","M":"52913749098805","L":"52913749131573","XL":"52913749164341","2XL":"52913749197109","3XL":"52913749229877"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Bear</span></div>
+<div class="product-name">Vancouver — Bear<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$79.95</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie wolf bear eagle orca"><div class="product-img">
+<img alt="Stay Wild Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a10a8465a314.jpg?v=1779476570"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-stay-wild-hoodie-collection" data-variants='{"S":"52913809686837","M":"52913809719605","L":"52913809555765","XL":"52913809588533","2XL":"52913809621301","3XL":"52913809654069"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie · Signature</div>
+<div class="product-name">The "Stay Wild"<br/>Hoodie Collection</div>
+<div class="product-bottom">
+<div class="product-price">$69.95</div>
+</div>
+</div></div><div class="product-card" data-cat="jacket eagle"><div class="product-img">
+<img alt="Eagle Windbreaker" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-basic-windbreaker-black-front-6a10c20137a04.jpg?v=1779483153"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-windbreaker-with-iconic-eagle-logo" data-variants='{"S":"52913942823221","M":"52913942855989","L":"52913942888757","XL":"52913942757685","2XL":"52913942790453"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Windbreaker <span class="animal-badge">Eagle</span></div>
+<div class="product-name">BC Branded — Eagle<br/>Windbreaker</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div></div><div class="product-card" data-cat="jacket wolf"><div class="product-img">
+<img alt="Grey Wolf Windbreaker" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-basic-windbreaker-black-front-6a10c2c734c6b.jpg?v=1779483349"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-windbreaker-with-iconic-eagle-logo-1" data-variants='{"S":"52913944428853","M":"52913944461621","L":"52913944494389","XL":"52913944363317","2XL":"52913944396085"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Windbreaker <span class="animal-badge">Wolf</span></div>
+<div class="product-name">BC Branded — Grey Wolf<br/>Windbreaker</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div></div><div class="product-card" data-cat="jacket orca"><div class="product-img">
+<img alt="Orca Windbreaker" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-basic-windbreaker-black-front-6a10c39e5c3fd.jpg?v=1779483573"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-windbreaker-with-iconic-orca-logo" data-variants='{"S":"52913948164405","M":"52913948197173","L":"52913948229941","XL":"52913948098869","2XL":"52913948131637"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Windbreaker <span class="animal-badge">Orca</span></div>
+<div class="product-name">BC Branded — Orca<br/>Windbreaker</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee eagle"><div class="product-img">
+<img alt="Eagle Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a10938eefd40.jpg?v=1779471271"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-eagle-adventure-tee" data-variants='{"S":"52913641947445","M":"52913641980213","L":"52913642012981","XL":"52913642045749","2XL":"52913642078517","3XL":"52913642111285"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Eagle</span></div>
+<div class="product-name">BC Branded — Eagle<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee wolf"><div class="product-img">
+<img alt="Wolf Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a10915013960.jpg?v=1779470697"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-wolf-adventure-tee" data-variants='{"S":"52913629102389","M":"52913629135157","L":"52913629167925","XL":"52913629200693","2XL":"52913629233461","3XL":"52913629266229"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Wolf</span></div>
+<div class="product-name">BC Branded — Wolf<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee orca"><div class="product-img">
+<img alt="Orca Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a108e005a2ff.jpg?v=1779469866"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-orca-adventure-tee" data-variants='{"S":"52913598005557","M":"52913598038325","L":"52913598071093","XL":"52913598103861","2XL":"52913598136629","3XL":"52913598169397"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Orca</span></div>
+<div class="product-name">Vancouver — Orca<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee bear"><div class="product-img">
+<img alt="Vancouver Bear Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a108c5fb8a1e.jpg?v=1779469438"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-vancouver-adventure-tee" data-variants='{"S":"52913569825077","M":"52913569857845","L":"52913569890613","XL":"52913569923381","2XL":"52913569956149","3XL":"52913569988917"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Bear</span></div>
+<div class="product-name">Vancouver — Bear<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="hat"><div class="product-img">
+<img alt="FLEX-FIT Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/closed-back-structured-cap-dark-navy-front-6a2b214e369ca.jpg?v=1781211482"/>
+<div class="product-img-overlay" data-handle="flex-fit-cap-with-iconic-bc-branded-™-logo" data-variants='{"S/M":"52990618370357","L/XL":"52990618403125"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a2540" title="Dark Navy"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Cap · Flexfit <span class="new-badge">New</span></div>
+<div class="product-name">FLEX-FIT Cap<br/>Iconic BC Branded Logo</div>
+<div class="product-bottom">
+<div class="product-price">$50.00</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie kids"><div class="product-img">
+<img alt="Kids Fleece Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/kids-fleece-hoodie-black-right-front-6a2b1094ea89c.jpg?v=1781207209"/>
+<div class="product-img-overlay" data-handle="kids-fleece-hoodie-2-7-born-wild-raised-bc-™-with-iconic-logo" data-variants='{"S":"52990510661941","M":"52990510694709","L":"52990510596405","XL":"52990510629173"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Kids · Ages 2–7 <span class="new-badge">New</span></div>
+<div class="product-name">Kids Fleece Hoodie<br/>Born Wild. Raised BC.</div>
+<div class="product-bottom">
+<div class="product-price">$44.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie kids"><div class="product-img">
+<img alt="Youth Collection Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/youth-garment-dyed-lightweight-hooded-sweatshirt-black-front-6a2b0efbb8a29.jpg?v=1781206797"/>
+<div class="product-img-overlay" data-handle="bc-branded-™-youth-collection-ages-7-born-wild-raised-bc-™" data-variants='{"XS":"52990501814581","S":"52990501847349","M":"52990501880117","L":"52990501912885","XL":"52990501945653"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Youth · Ages 7+ <span class="new-badge">New</span></div>
+<div class="product-name">Youth Collection<br/>Born Wild. Raised BC.</div>
+<div class="product-bottom">
+<div class="product-price">$49.99</div>
+</div>
+</div></div><div class="product-card" data-cat="jacket"><div class="product-img">
+<img alt="BC Branded Windbreaker" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-basic-windbreaker-black-front-6a10c0115ea33.jpg?v=1779482656"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-windbreaker-with-iconic-logo" data-variants='{"S":"52913936597301","M":"52913936630069","L":"52913936662837","XL":"52913936695605","2XL":"52913936728373"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Jacket</div>
+<div class="product-name">BC Branded<br/>Windbreaker</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="The Original BC Branded Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a10a16f90429.jpg?v=1779474823"/>
+<div class="product-img-overlay" data-handle="the-original-bc-branded-hoodie" data-variants='{"S":"52913765744949","M":"52913765777717","L":"52913765810485","XL":"52913765843253","2XL":"52913765679413","3XL":"52913765712181"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie · Original</div>
+<div class="product-name">The Original<br/>BC Branded Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$69.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee eagle"><div class="product-img">
+<img alt="Vancouver Eagle Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a10980b67955.jpg?v=1779472422"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-vancouver-eagle-adventure-tee" data-variants='{"Black Heather": "52913687265589", "Heather Emerald": "52913687462197", "Heather Navy": "52913687658805", "Dark Grey Heather": "52913687855413"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div><div class="swatch" style="background:#1a2a4a" title="Heather Navy"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey Heather"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Eagle</span></div>
+<div class="product-name">Vancouver — Eagle<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee wolf"><div class="product-img">
+<img alt="Vancouver Wolf Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a109030a499c.jpg?v=1779470404"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-vancouver-wolf-adventure-tee" data-variants='{"Black Heather": "52913624711477", "Heather Emerald": "52913624908085", "Dark Grey Heather": "52913625104693", "Heather Forest": "52913625301301"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey Heather"></div><div class="swatch" style="background:#1a3a1a" title="Heather Forest"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Wolf</span></div>
+<div class="product-name">Vancouver — Wolf<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee orca"><div class="product-img">
+<img alt="Orca Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a108ee89b050.jpg?v=1779470078"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-orca-adventure-tee-1" data-variants='{"Black Heather": "52913609998645", "Heather Emerald": "52913610195253", "Heather Navy": "52913610391861", "Dark Grey Heather": "52913610588469"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div><div class="swatch" style="background:#1a2a4a" title="Heather Navy"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey Heather"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Orca</span></div>
+<div class="product-name">Vancouver — Orca<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee bear"><div class="product-img">
+<img alt="Bear Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a1089021d5ed.jpg?v=1779468566"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-adventure-tee" data-variants='{"Black Heather": "52913553211701", "Heather Emerald": "52913553408309", "Heather Navy": "52913553604917", "Dark Grey Heather": "52913553801525"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div><div class="swatch" style="background:#1a2a4a" title="Heather Navy"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey Heather"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Adventure Tee <span class="animal-badge">Bear</span></div>
+<div class="product-name">BC Branded — Bear<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Whistler BC Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a286e64b0354.jpg?v=1781034643"/>
+<div class="product-img-overlay" data-handle="whistler-bc-shirt-vintage-canadian-mountain-adventure-tee-bc-branded-apparel" data-variants='{"Black Heather": "52980046004533", "Heather Emerald": "52980046299445"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Whistler BC Shirt</div>
+<div class="product-bottom">
+<div class="product-price">$39.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="BC Branded Iconic Tee Where Legends Earn Their View" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a286129e3fcb.jpg?v=1781031240"/>
+<div class="product-img-overlay" data-handle="bc-branded-iconic-tee-where-legends-earn-their-view-the-chief" data-variants='{"Black Heather": "52979830915381", "Heather Emerald": "52979831177525"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">BC Branded Iconic Tee<br/>"Where Legends Earn Their View"</div>
+<div class="product-bottom">
+<div class="product-price">$39.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="BC Branded™ Weekend Warrior Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-heather-slate-front-6a218dc4cf19c.jpg?v=1780584231"/>
+<div class="product-img-overlay" data-handle="bc-branded™-weekend-warrior-tee" data-variants='{"Black Heather": "52963329933621", "Heather Emerald": "52963330195765"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">BC Branded™<br/>Weekend Warrior Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Spirit of the West Vancouver Premium Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a210101d9de5.jpg?v=1780547867"/>
+<div class="product-img-overlay" data-handle="spirit-of-the-west-vancouver-premium-tee-from-bc-branded-co" data-variants='{"Black Heather": "52961890894133", "Heather Emerald": "52961891156277"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Spirit of the West<br/>Vancouver Premium Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Spirit of the West Coast Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a1cd2b8100f7.jpg?v=1780273874"/>
+<div class="product-img-overlay" data-handle="the-spirit-of-the-west-coast-tee" data-variants='{"Black Heather": "52947837354293", "Dark Grey Heather": "52947837616437"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey Heather"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Spirit of the<br/>West Coast Tee</div>
+<div class="product-bottom">
+<div class="product-price">$44.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Toast to the Westcoast Vintage Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-heather-autumn-front-6a1a166d178c7.jpg?v=1780094607"/>
+<div class="product-img-overlay" data-handle="bc-branded-toast-to-the-westcoast-vintage-tee" data-variants='{"Black Heather": "52940182159669", "Heather Emerald": "52940182389045"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">"Toast to the<br/>Westcoast" Vintage Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Spirit Bear Indigenous Art Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-heather-forest-front-6a18f7ddc78ac.jpg?v=1780021235"/>
+<div class="product-img-overlay" data-handle="spirit-bear-indigenous-art-tee-bc-branded-collection" data-variants='{"Heather Forest": "52937323708725", "Heather Slate": "52937323938101"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a3a1a" title="Heather Forest"></div><div class="swatch" style="background:#6a7a8a" title="Heather Slate"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Spirit Bear<br/>Indigenous Art Tee</div>
+<div class="product-bottom">
+<div class="product-price">$44.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Vancouver Canada Classic Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-front-6a17aad519424.jpg?v=1779935975"/>
+<div class="product-img-overlay" data-handle="vancouver-canada-classic-tee-bc-branded-collection" data-variants='{"XS": "52933457183029", "S": "52933457215797", "M": "52933457248565", "L": "52933457281333", "XL": "52933457314101", "2XL": "52933457346869"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Vancouver Canada<br/>Classic Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Vancouver Grizzlies Vintage Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a171e675c2ef.jpg?v=1779900038"/>
+<div class="product-img-overlay" data-handle="vancouver-grizzlies-vintage-tee-bc-branded-collection" data-variants='{"Black Heather": "52932167631157", "Heather Emerald": "52932167926069"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Vancouver Grizzlies<br/>Vintage Tee</div>
+<div class="product-bottom">
+<div class="product-price">$49.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Master Relaxer BC Branded Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a17018d05b59.jpg?v=1779892663"/>
+<div class="product-img-overlay" data-handle="master-relaxer-bc-branded-t-shirt-description" data-variants='{"Black Heather": "52931797909813", "Heather Emerald": "52931798204725"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">Master Relaxer<br/>BC Branded Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="BC Branded Inspired Storytelling Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a16395255a91.jpg?v=1779841398"/>
+<div class="product-img-overlay" data-handle="bc-branded-inspired-storytelling-tshirt" data-variants='{"Black Heather": "52925921493301", "Heather Emerald": "52925921755445"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">BC Branded Inspired<br/>Storytelling Tee</div>
+<div class="product-bottom">
+<div class="product-price">$44.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="BC Branded Special Edition Ski Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-front-6a150998ad2cd.jpg?v=1779763629"/>
+<div class="product-img-overlay" data-handle="bc-branded-special-edition-ski-shirt" data-variants='{"XS": "52923737211189", "S": "52923737243957", "M": "52923737276725", "L": "52923737309493", "XL": "52923737342261", "2XL": "52923737375029"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">BC Branded<br/>Special Edition Ski Shirt</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Bad Choices Make Good Stories Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-heather-brown-front-6a14f554c9872.jpg?v=1779758442"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-bad-choices-make-good-stories-special-edition-shirt" data-variants='{"Black Heather": "52923692548405", "Heather Emerald": "52923692843317"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">"Bad Choices Make<br/>Good Stories" Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="BC Branded Camping Shirt" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a14ad67751b2.jpg?v=1779740029"/>
+<div class="product-img-overlay" data-handle="bc-branded-camping-shirt-is-ready-to-hit-the-road" data-variants='{"Black Heather": "52923220361525", "Heather Emerald": "52923220590901"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#2a6a4a" title="Heather Emerald"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">BC Branded<br/>Camping Shirt</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="Midnight Camp Crew Special Edition Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a1464741f332.jpg?v=1779721359"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-midnight-camp-crew-special-edition-shirt" data-variants='{"Black Heather": "52922715930933", "Heather Navy": "52922716160309"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#1a2a4a" title="Heather Navy"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">"Midnight Camp Crew"<br/>Special Edition Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="tee"><div class="product-img">
+<img alt="BC Branded Adventure Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-staple-t-shirt-black-heather-front-6a145b82dd560.jpg?v=1779719066"/>
+<div class="product-img-overlay" data-handle="unisex-t-shirt-2" data-variants='{"Black Heather": "52922668876085", "Heather Navy": "52922669138229"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a" title="Black Heather"></div><div class="swatch" style="background:#1a2a4a" title="Heather Navy"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Camping &amp; Adventure Tee</div>
+<div class="product-name">BC Branded<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="Vintage Vancouver Grizzlies Designer Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-charcoal-heather-back-6a25ff23b24e7.jpg?v=1780875075"/>
+<div class="product-img-overlay" data-handle="vintage-vancouver-grizzlies-designer-hoodie" data-variants='{"S":"52971614699829","M":"52971614732597","L":"52971614765365","XL":"52971614798133","2XL":"52971614830901"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#3a3a3a" title="Charcoal Heather"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie · Vintage <span class="new-badge">New</span></div>
+<div class="product-name">Vintage Vancouver Grizzlies<br/>Designer Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$89.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="BC Branded Iconic Crest Collection Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-navy-blazer-front-6a4838fd9c47e.jpg?v=1783118096"/>
+<div class="product-img-overlay" data-handle="🏔️-bc-branded-iconic-crest-collection™-hoodie" data-variants='{"S":"53089231962421","M":"53089231995189","L":"53089232027957","XL":"53089232060725","2XL":"53089232093493"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a2a4a" title="Navy Blazer"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie · Iconic Crest <span class="new-badge">New</span></div>
+<div class="product-name">🏔️ BC Branded Iconic<br/>Crest Collection™ Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="BC Branded North Vancouver Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-navy-blazer-front-6a486be24e95a.jpg?v=1783131132"/>
+<div class="product-img-overlay" data-handle="bc-branded™-north-vancouver-hoodie" data-variants='{"S":"53090296693045","M":"53090296725813","L":"53090296758581","XL":"53090296791349","2XL":"53090296824117"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a2a4a" title="Navy Blazer"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie · Iconic <span class="new-badge">New</span></div>
+<div class="product-name">BC Branded™<br/>North Vancouver Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="BC Branded Granville Island Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-white-front-6a486ab3484ba.jpg?v=1783130833"/>
+<div class="product-img-overlay" data-handle="bc-branded™-granville-island-hoodie" data-variants='{"S":"53090289680693","M":"53090289713461","L":"53090289746229","XL":"53090289778997","2XL":"53090289811765"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#f5f5f5" title="White"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie · Iconic <span class="new-badge">New</span></div>
+<div class="product-name">BC Branded™<br/>Granville Island Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie wolf"><div class="product-img">
+<img alt="The BC Branded Vancouver - Wolf Hoodie Collection" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-black-front-6a10d62943a36.jpg?v=1779488309"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-vancouver-wolf-hoodie-collection" data-variants='{"S":"52914006065461","M":"52914006098229","L":"52914006130997","XL":"52914006163765","2XL":"52914006196533"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Hoodie <span class="animal-badge">Wolf</span></div>
+<div class="product-name">The BC Branded<br/>'Vancouver - Wolf' Collection</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div></div></section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo">BC<span>.</span>Branded Co.</div>
+<div class="footer-copy">© 2025 BC Branded Co. · Surrey, BC Canada</div>
+<a class="footer-link" href="index.html">← Back to Main Site</a>
+</footer>
+<script>
+(function() {
+  var DOMAIN = 'an7pix-mc.myshopify.com';
+  var TOKEN  = 'fea71cefe8f94954fd6805e9de531307';
+
+  // Animate cards on scroll
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.product-card').forEach(function(el) { io.observe(el); });
+
+  // Build picker buttons from data-variants
+  document.querySelectorAll('.product-img-overlay').forEach(function(overlay) {
+    var variants = JSON.parse(overlay.dataset.variants || '{}');
+    var container = overlay.querySelector('.picker-options');
+    Object.keys(variants).forEach(function(key) {
+      var btn = document.createElement('button');
+      btn.className = 'pick-btn';
+      btn.textContent = key;
+      btn.dataset.variant = variants[key];
+      container.appendChild(btn);
+    });
+  });
+
+  // Filter buttons — support multi-category cards (e.g. "hoodie wolf")
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      var visible = 0;
+      document.querySelectorAll('.product-card').forEach(function(card) {
+        var cats = card.dataset.cat || '';
+        if (filter === 'all' || cats.split(' ').includes(filter)) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      document.querySelector('.filter-count').textContent = visible + ' product' + (visible !== 1 ? 's' : '');
+    });
+  });
+
+  // Handle picker clicks → cartCreate → checkout
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.pick-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    var variantId = btn.dataset.variant;
+    var origText = btn.textContent;
+    btn.classList.add('loading');
+    btn.textContent = '…';
+
+    // Direct Shopify cart URL — always works regardless of custom domain
+    window.location.href = 'https://an7pix-mc.myshopify.com/cart/' + variantId + ':1?storefront=true';
+  });
+})();
+</script>
+<script>
+// ── COLOR SWATCH SWITCHER (dynamic, loads all colors from Shopify) ──
+(function() {
+  var DOMAIN = 'an7pix-mc.myshopify.com';
+  var TOKEN  = 'fea71cefe8f94954fd6805e9de531307';
+
+  // Color name → hex mapping
+  var COLOR_HEX = {
+    'black':'#111111','vintage black':'#2a2828','solid black blend':'#1a1a1a',
+    'white':'#f5f5f5','cream':'#f0ece4','natural':'#e8e0d0',
+    'forest green':'#2d4a2a','military green':'#4a5a3a','agave':'#7aaa8a','pine':'#2d3d28',
+    'alpine green':'#4a6741','pigment alpine green':'#4a6741',
+    'navy':'#1a2a4a','heather navy':'#2a3a5a','slate blue':'#4a5f7a','pigment slate blue':'#4a5f7a','heather slate':'#606878',
+    'grey':'#6a6a6a','gray':'#6a6a6a','carbon grey':'#4a4a4a','dark grey heather':'#505050','storm':'#607080','charcoal':'#3a3a3a',
+    'red':'#8b1a1a','team red':'#8b1a1a','maroon':'#7a2a2a','pigment maroon':'#7a2a2a','berry':'#7a2a4a',
+    'pink':'#e88aa0','pigment pink':'#c97a8a','dusty rose':'#d4908a','peach':'#e8a878','heather mauve':'#c890a0',
+    'blue':'#3a6aaa','light blue':'#7aaac7','pigment light blue':'#7aaac7','turquoise':'#40b0b0',
+    'orange':'#E8541A','adobe':'#c87048',
+    'brown':'#8a6a4a','latte':'#c8a87a','khaki':'#b8a878','tan':'#c8a870',
+    'purple':'#6a4a8a','lavender':'#b0a0c8',
+    'yellow':'#d4b840','gold':'#c8a84b'
+  };
+
+  function getHex(colorName) {
+    var key = colorName.toLowerCase();
+    if (COLOR_HEX[key]) return COLOR_HEX[key];
+    for (var k in COLOR_HEX) {
+      if (key.indexOf(k) !== -1 || k.indexOf(key) !== -1) return COLOR_HEX[k];
+    }
+    return '#888888';
+  }
+
+  function fetchAndBuildSwatches(card) {
+    var overlay = card.querySelector('.product-img-overlay');
+    if (!overlay || !overlay.dataset.handle) return;
+    var handle = overlay.dataset.handle;
+
+    fetch('https://' + DOMAIN + '/api/2024-01/graphql.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Shopify-Storefront-Access-Token': TOKEN },
+      body: JSON.stringify({ query:
+        '{ product(handle: "' + handle + '") { variants(first: 50) { edges { node { id selectedOptions { name value } image { url } } } } } }'
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var edges = data.data && data.data.product && data.data.product.variants.edges || [];
+
+      // Build color map: colorName → { image, sizes: {S: variantId, ...} }
+      var colors = {};
+      var colorOrder = [];
+      edges.forEach(function(e) {
+        var opts = {};
+        e.node.selectedOptions.forEach(function(o) { opts[o.name] = o.value; });
+        var color = opts['Color'] || opts['Colour'] || '';
+        var size  = opts['Size']  || '';
+        var vid   = e.node.id.split('/').pop();
+        var img   = e.node.image ? e.node.image.url : '';
+        if (!color) return;
+        if (!colors[color]) { colors[color] = { image: img, sizes: {} }; colorOrder.push(color); }
+        if (size) colors[color].sizes[size] = vid;
+      });
+
+      if (colorOrder.length < 1) return;
+
+      // Find or create the overlay-colors container
+      var overlayBottom = overlay.querySelector('.overlay-bottom');
+      if (!overlayBottom) return;
+      var colorsDiv = overlayBottom.querySelector('.overlay-colors');
+      if (!colorsDiv) {
+        colorsDiv = document.createElement('div');
+        colorsDiv.className = 'overlay-colors';
+        overlayBottom.insertBefore(colorsDiv, overlayBottom.firstChild);
+      }
+
+      // Rebuild swatches
+      colorsDiv.innerHTML = '<span class="ov-color-label">Color</span>';
+      var swatchEls = [];
+
+      colorOrder.forEach(function(colorName, idx) {
+        var sw = document.createElement('div');
+        sw.className = 'swatch';
+        sw.title = colorName;
+        sw.style.background = getHex(colorName);
+        sw.style.border = '2px solid rgba(255,255,255,0.6)';
+        sw.style.width = '14px';
+        sw.style.height = '14px';
+        sw.style.borderRadius = '50%';
+        sw.style.cursor = 'pointer';
+        sw.style.flexShrink = '0';
+        colorsDiv.appendChild(sw);
+        swatchEls.push(sw);
+
+        sw.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          // Highlight selected
+          swatchEls.forEach(function(s) { s.style.outline = ''; s.style.outlineOffset = ''; });
+          sw.style.outline = '2px solid #fff';
+          sw.style.outlineOffset = '2px';
+
+          // Swap image
+          var img = card.querySelector('.product-img img');
+          if (img && colors[colorName].image) img.src = colors[colorName].image;
+
+          // Rebuild size buttons for this color
+          var container = overlay.querySelector('.picker-options, .size-options');
+          if (container) {
+            container.innerHTML = '';
+            var sizesObj = colors[colorName].sizes;
+            Object.keys(sizesObj).forEach(function(sz) {
+              var btn = document.createElement('button');
+              btn.className = 'pick-btn';
+              btn.textContent = sz;
+              btn.dataset.variant = sizesObj[sz];
+              container.appendChild(btn);
+            });
+          }
+        });
+      });
+
+      // Auto-select first color
+      if (swatchEls.length) {
+        swatchEls[0].style.outline = '2px solid #fff';
+        swatchEls[0].style.outlineOffset = '2px';
+      }
+    })
+    .catch(function() {});
+  }
+
+  document.querySelectorAll('.product-card').forEach(function(card) {
+    fetchAndBuildSwatches(card);
+  });
+})();
+</script></body>
+</html>

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>BC Branded Co. — West Coast Adventure Apparel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
@@ -41,11 +42,11 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(14,15,12,0.6);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  transition: background 0.3s;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s, backdrop-filter 0.4s, border-color 0.4s;
 }
 .nav-logo {
   font-size: 15px;
@@ -129,8 +130,8 @@ nav {
     rgba(6,8,5,0.25) 0%,
     rgba(6,8,5,0.1) 35%,
     rgba(6,8,5,0.2) 60%,
-    rgba(6,8,5,0.88) 85%,
-    rgba(6,8,5,0.98) 100%
+    rgba(196,196,192,0.55) 88%,
+    rgba(201,201,197,0.92) 100%
   );
 }
 
@@ -143,117 +144,112 @@ nav {
 
 /* Hero content */
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 10;
+  top: 50%;
+  transform: translateY(-58%);
+  left: 0;
+  right: 0;
+  padding: 0 56px;
   text-align: center;
-  padding: 40px 48px;
-  max-width: 960px;
-
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: rgba(232,84,26,0.9);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.3s ease forwards;
-}
-.hero-eyebrow::before, .hero-eyebrow::after {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: rgba(232,84,26,0.4);
 }
 .hero-h1 {
-  font-size: clamp(62px, 11vw, 130px);
-  font-weight: 900;
-  line-height: 0.88;
-  letter-spacing: -4px;
-  color: #fff;
+  display: block;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeUp 0.8s 0.5s ease forwards;
-  text-shadow:
-    0 0 80px rgba(0,0,0,0.9),
-    0 0 40px rgba(0,0,0,0.8),
-    0 4px 24px rgba(0,0,0,0.7),
-    0 2px 4px rgba(0,0,0,0.9);
+  animation: fadeUp 0.8s 0.3s ease forwards;
+  line-height: 0.85;
+  margin: 0;
 }
-.hero-h1 .outline {
-  -webkit-text-stroke: 2px rgba(255,255,255,0.9);
+.bc-solid {
+  display: block;
+  font-size: clamp(70px, 11vw, 140px);
+  font-weight: 900;
   color: transparent;
-  text-shadow: 0 0 60px rgba(255,255,255,0.3), 0 0 30px rgba(0,0,0,0.8);
+  -webkit-text-stroke: 2px rgba(255,255,255,0.85);
+  letter-spacing: -4px;
+  text-shadow: none;
+  line-height: 0.9;
 }
-.hero-h1 .gold-word {
-  color: var(--orange-light);
+.branded-outline {
+  display: block;
+  font-size: clamp(65px, 12vw, 150px);
+  font-weight: 900;
+  color: var(--orange);
+  -webkit-text-stroke: 0;
+  letter-spacing: -3px;
+  line-height: 0.9;
   text-shadow:
-    0 0 80px rgba(232,84,26,0.6),
-    0 0 40px rgba(232,84,26,0.4),
-    0 4px 24px rgba(0,0,0,0.8);
+    0 0 30px rgba(232,84,26,0.25),
+    0 0 60px rgba(232,84,26,0.1);
+}
+.hero-tagline {
+  font-size: clamp(14px, 2vw, 22px);
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s ease forwards;
 }
 .hero-sub {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 500;
   color: rgba(245,240,232,0.5);
-  letter-spacing: 0.5px;
-  line-height: 1.6;
-  margin-top: 24px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 14px;
   opacity: 0;
-  animation: fadeUp 0.8s 0.7s ease forwards;
+  animation: fadeUp 0.8s 0.65s ease forwards;
 }
 .hero-ctas {
   display: flex;
   gap: 14px;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 32px;
   flex-wrap: wrap;
   opacity: 0;
-  animation: fadeUp 0.8s 0.9s ease forwards;
+  animation: fadeUp 0.8s 0.8s ease forwards;
 }
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--dark);
-  background: var(--gold-light);
+  color: #fff;
+  background: var(--orange);
   padding: 16px 36px;
-  border-radius: 100px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(232,84,26,0.35);
+  background: var(--orange-light);
+  transform: translateY(-1px);
 }
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--cream);
-  padding: 15px 32px;
-  border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(245,240,232,0.85);
+  padding: 15px 36px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(245,240,232,0.4);
+  background: rgba(0,0,0,0.35);
   text-decoration: none;
   transition: border-color 0.2s, background 0.2s;
 }
 .btn-ghost:hover {
-  border-color: rgba(255,255,255,0.5);
-  background: rgba(255,255,255,0.06);
+  border-color: rgba(245,240,232,0.8);
+  background: rgba(0,0,0,0.5);
 }
 
 /* Mountains SVG */
@@ -283,7 +279,7 @@ nav {
   font-size: 9px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(245,240,232,0.5);
 }
 .scroll-line {
   width: 1px;
@@ -318,14 +314,14 @@ nav {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--dark);
+  color: #fff;
   white-space: nowrap;
 }
 .marquee-dot {
   width: 4px; height: 4px;
   border-radius: 50%;
-  background: var(--dark);
-  opacity: 0.5;
+  background: #fff;
+  opacity: 0.6;
   flex-shrink: 0;
 }
 @keyframes marquee {
@@ -452,9 +448,11 @@ section {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
+@media (max-width: 1024px) { .products { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .products { grid-template-columns: repeat(2, 1fr); } }
 
 .product-card {
   background: #141612;
@@ -477,13 +475,16 @@ section {
 
 .product-img {
   width: 100%;
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
   position: relative;
   overflow: hidden;
-  background: #1a1c17;
+  background: #f0eeeb;
 }
-.product-img svg {
-  width: 100%; height: 100%;
+.product-img img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center center;
+}
+.band-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center top;
 }
 .product-img-overlay {
   position: absolute;
@@ -491,29 +492,38 @@ section {
   background: rgba(0,0,0,0);
   transition: background 0.3s;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
 }
 .product-card:hover .product-img-overlay {
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.2);
 }
-.product-quick {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 12px 24px;
-  border: 1px solid rgba(255,255,255,0.7);
-  border-radius: 100px;
+.overlay-bottom {
+  width: 100%;
+  padding: 10px 12px 13px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.78));
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   opacity: 0;
-  transform: translateY(6px);
+  transform: translateY(5px);
   transition: opacity 0.25s, transform 0.25s;
-  cursor: pointer;
 }
-.product-card:hover .product-quick {
+.product-card:hover .overlay-bottom {
   opacity: 1;
   transform: translateY(0);
+}
+.overlay-colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ov-color-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  margin-right: 2px;
 }
 
 .product-info {
@@ -550,9 +560,12 @@ section {
   gap: 5px;
 }
 .swatch {
-  width: 12px; height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 2px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* ── STORY SECTION ── */
@@ -739,446 +752,838 @@ footer {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   section { padding: 80px 20px; }
 }
+
+/* ── SHOPIFY SIZE PICKER ── */
+.size-picker { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }
+.size-label { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 600; }
+.size-options { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-start; }
+.size-btn {
+  min-width: 30px; padding: 5px 6px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.35); color: #fff;
+  font-size: 10px; font-weight: 700; cursor: pointer;
+  border-radius: 3px; transition: all 0.15s ease;
+  font-family: inherit; letter-spacing: 0.5px;
+}
+.size-btn:hover { background: var(--orange); border-color: var(--orange); }
+.size-btn.loading { opacity: 0.5; pointer-events: none; }
+.band-cta { text-decoration: none; }
+
+/* ── COLLECTIONS SECTION ── */
+.collections-section {
+  padding: 80px 40px;
+  background: var(--dark);
+}
+.collections-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.collections-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.coll-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 440px;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.07);
+  text-decoration: none;
+  display: block;
+}
+.coll-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+.coll-card:hover img { transform: scale(1.04); }
+.coll-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.15) 100%);
+  transition: background 0.3s ease;
+}
+.coll-card:hover .coll-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.2) 100%);
+}
+.coll-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px;
+}
+.coll-tag {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.coll-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+.coll-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+.coll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.coll-card:hover .coll-btn {
+  background: var(--orange);
+  border-color: var(--orange);
+}
+.coll-product-hint {
+  font-size: 10px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* ── NEW DROP BANNER ── */
+.new-drop-banner {
+  margin: 0 40px 80px;
+  background: linear-gradient(135deg, #1a1208 0%, #2a1a08 50%, #1a1208 100%);
+  border: 1px solid rgba(232,84,26,0.2);
+  border-radius: 20px;
+  padding: 48px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.drop-left {}
+.drop-eyebrow {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+.drop-title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin-bottom: 10px;
+}
+.drop-sub {
+  font-size: 13px;
+  color: rgba(245,240,232,0.5);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 420px;
+}
+.drop-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.drop-tag {
+  background: rgba(232,84,26,0.12);
+  border: 1px solid rgba(232,84,26,0.25);
+  color: var(--orange-light);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.drop-right {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.drop-stat {
+  text-align: center;
+  background: rgba(232,84,26,0.08);
+  border: 1px solid rgba(232,84,26,0.15);
+  border-radius: 14px;
+  padding: 20px 28px;
+}
+.drop-stat-num {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.drop-stat-lbl {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.4);
+}
+.drop-email-wrap {
+  margin-top: 24px;
+}
+.drop-email-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.45);
+  margin-bottom: 10px;
+}
+.drop-email-row {
+  display: flex;
+  gap: 8px;
+  max-width: 420px;
+}
+.drop-email-input {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f5f0e8;
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.drop-email-input:focus { border-color: rgba(232,84,26,0.5); }
+.drop-email-btn {
+  background: #E8541A;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.drop-email-btn:hover { background: #f07040; }
+.drop-email-hint {
+  font-size: 11px;
+  color: rgba(245,240,232,0.25);
+  margin-top: 8px;
+}
+
+/* ── HIKES MAP SECTION ── */
+.hikes-section {
+  padding: 80px 40px;
+  background: linear-gradient(180deg, #0e0f0c 0%, #0a110a 100%);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.hikes-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.hikes-eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.hikes-title {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+.hikes-title span { color: var(--orange); }
+.hikes-subtitle {
+  font-size: 15px;
+  color: rgba(245,240,232,0.55);
+}
+.hikes-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+#hike-map {
+  height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.hike-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 480px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+.hike-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.hike-card:hover, .hike-card.active {
+  background: rgba(232,84,26,0.1);
+  border-color: rgba(232,84,26,0.35);
+}
+.hike-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hike-details { flex: 1; }
+.hike-name {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.hike-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: rgba(245,240,232,0.45);
+}
+.hike-meta span::after { content: "·"; margin-left: 8px; }
+.hike-meta span:last-child::after { content: ""; margin: 0; }
+.hike-arrow {
+  font-size: 14px;
+  color: rgba(245,240,232,0.3);
+  transition: color 0.2s;
+}
+.hike-card:hover .hike-arrow, .hike-card.active .hike-arrow { color: var(--orange); }
+@media (max-width: 768px) {
+  .hikes-layout { grid-template-columns: 1fr; }
+  #hike-map { height: 320px; }
+  .hike-list { max-height: 300px; }
+  .hikes-section { padding: 60px 20px; }
+}
 </style>
+<link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/><link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:10px;">
-    <!-- Bear icon mark -->
-    <svg width="32" height="32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-      <!-- Badge shape -->
-      <path d="M100,4 L156,20 L188,70 L188,130 L156,180 L100,196 L44,180 L12,130 L12,70 L44,20 Z" fill="#0a0a0a" stroke="#E8541A" stroke-width="6"/>
-      <!-- Bear head -->
-      <ellipse cx="100" cy="98" rx="52" ry="48" fill="#7A3B1E"/>
-      <!-- Ears -->
-      <path d="M52,68 C38,52 34,36 44,28 C54,20 68,26 72,42 C76,54 70,68 60,74Z" fill="#7A3B1E"/>
-      <path d="M148,68 C162,52 166,36 156,28 C146,20 132,26 128,42 C124,54 130,68 140,74Z" fill="#7A3B1E"/>
-      <!-- Inner ear -->
-      <path d="M56,64 C48,52 46,40 52,34 C58,28 68,32 70,44 C72,52 66,64 58,68Z" fill="#5A2A12"/>
-      <path d="M144,64 C152,52 154,40 148,34 C142,28 132,32 130,44 C128,52 134,64 142,68Z" fill="#5A2A12"/>
-      <!-- Muzzle -->
-      <ellipse cx="100" cy="116" rx="30" ry="22" fill="#e8d0b0"/>
-      <!-- Open mouth / roar -->
-      <path d="M76,108 C84,102 116,102 124,108 C128,118 124,130 100,134 C76,130 72,118 76,108Z" fill="#1a0a06"/>
-      <!-- Teeth top -->
-      <path d="M82,108 L86,118 L82,118Z" fill="white"/>
-      <path d="M92,106 L94,117 L90,117Z" fill="white"/>
-      <path d="M100,105 L102,116 L98,116Z" fill="white"/>
-      <path d="M108,106 L110,117 L106,117Z" fill="white"/>
-      <path d="M116,108 L120,118 L116,118Z" fill="white"/>
-      <!-- Teeth bottom -->
-      <path d="M86,130 L88,120 L84,120Z" fill="white"/>
-      <path d="M100,132 L102,122 L98,122Z" fill="white"/>
-      <path d="M114,130 L116,120 L112,120Z" fill="white"/>
-      <!-- Eyes -->
-      <ellipse cx="80" cy="88" rx="9" ry="8" fill="#1a0a06"/>
-      <ellipse cx="120" cy="88" rx="9" ry="8" fill="#1a0a06"/>
-      <ellipse cx="78" cy="86" rx="3" ry="3" fill="rgba(255,255,255,0.5)"/>
-      <ellipse cx="118" cy="86" rx="3" ry="3" fill="rgba(255,255,255,0.5)"/>
-      <!-- Brow / angry lines -->
-      <path d="M68,78 L86,84" stroke="#3a1a08" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <path d="M132,78 L114,84" stroke="#3a1a08" stroke-width="3" stroke-linecap="round" fill="none"/>
-      <!-- Nose -->
-      <path d="M92,98 C96,92 104,92 108,98 C112,104 108,110 100,111 C92,110 88,104 92,98Z" fill="#1a0a06"/>
-      <!-- BC BRANDED text bar -->
-      <rect x="12" y="148" width="176" height="36" rx="4" fill="#0a0a0a"/>
-      <text x="100" y="163" text-anchor="middle" font-size="13" font-weight="900" letter-spacing="2" fill="#E8541A" font-family="Inter,sans-serif">BC BRANDED</text>
-      <text x="100" y="177" text-anchor="middle" font-size="9" font-weight="500" letter-spacing="2" fill="white" font-family="Inter,sans-serif">Canada</text>
-    </svg>
+<a class="nav-logo" href="#">
     BC <span style="color:var(--orange)">Branded</span> Co.
   </a>
-  <ul class="nav-links">
-    <li><a href="#">Hoodies</a></li>
-    <li><a href="#">Tees</a></li>
-    <li><a href="#">Windbreakers</a></li>
-    <li><a href="#">Collections</a></li>
-    <li><a href="#">Our Story</a></li>
-  </ul>
-  <div class="nav-right">
-    <a href="#" class="nav-cart">Cart (0)</a>
-  </div>
+<ul class="nav-links">
+</ul>
+<div class="nav-right">
+<a class="nav-cart" href="#">Cart (0)</a>
+</div>
 </nav>
-
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-bg">
-    <div class="hero-sky" id="hero-photo"></div>
-    <div class="hero-photo-overlay"></div>
-
-
-
-        <!-- Pine tree silhouette overlay for depth -->
-    <svg style="position:absolute;bottom:0;left:0;width:100%;height:22%;z-index:6;pointer-events:none" viewBox="0 0 1440 200" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
-      <g fill="rgba(6,8,5,1)">
-        <polygon points="0,200 18,118 36,200"/>
-        <polygon points="26,200 50,96 74,200"/>
-        <polygon points="62,200 88,80 114,200"/>
-        <polygon points="102,200 124,112 146,200"/>
-        <polygon points="140,200 162,126 184,200"/>
-        <polygon points="198,200 226,78 254,200"/>
-        <polygon points="248,200 272,104 296,200"/>
-        <polygon points="310,200 330,130 350,200"/>
-        <polygon points="1090,200 1114,130 1138,200"/>
-        <polygon points="1148,200 1174,84 1200,200"/>
-        <polygon points="1196,200 1218,112 1240,200"/>
-        <polygon points="1242,200 1268,92 1294,200"/>
-        <polygon points="1294,200 1318,118 1342,200"/>
-        <polygon points="1344,200 1372,74 1400,200"/>
-        <polygon points="1402,200 1422,108 1442,200"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- Hero text -->
-  <div class="hero-content">
-    <div class="hero-eyebrow">Born in Vancouver, BC</div>
-    <h1 class="hero-h1">
-      <span class="outline">West</span><br>
-      <span class="gold-word">Coast</span><br>
-      <span>Identity</span>
-    </h1>
-    <p class="hero-sub">Adventure apparel for explorers, creators, and free spirits who live for the outdoors.</p>
-    <div class="hero-ctas">
-      <a href="#shop" class="btn-primary">Shop the Collection</a>
-      <a href="#story" class="btn-ghost">Our Story <span>→</span></a>
-    </div>
-  </div>
-
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
+<div class="hero-bg">
+<div class="hero-sky" id="hero-photo"></div>
+<div class="hero-photo-overlay"></div>
 </div>
-
+<!-- Hero text -->
+<div class="hero-content">
+<h1 class="hero-h1">
+<span class="bc-solid">BC</span>
+<span class="branded-outline">Branded</span>
+</h1>
+<p class="hero-tagline">West Coast Wear</p>
+<p class="hero-sub">Adventure Apparel for the Pacific Northwest.</p>
+<div class="hero-ctas">
+<a class="btn-primary" href="#shop">Shop the Drop →</a>
+<a class="btn-ghost" href="#story">Our Story</a>
+</div>
+</div>
+<div class="scroll-hint">
+<span>Scroll</span>
+<div class="scroll-line"></div>
+</div>
+</div>
 <!-- MARQUEE -->
 <div class="marquee-wrap">
-  <div class="marquee-track">
-    <div class="marquee-item">West Coast Apparel<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Born in Vancouver<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Work Hard, Adventure Harder<div class="marquee-dot"></div></div>
-    <div class="marquee-item">BC Branded Co.<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Wolves · Eagles · Orcas<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Free Spirits Only<div class="marquee-dot"></div></div>
-    <div class="marquee-item">West Coast Apparel<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Born in Vancouver<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Work Hard, Adventure Harder<div class="marquee-dot"></div></div>
-    <div class="marquee-item">BC Branded Co.<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Wolves · Eagles · Orcas<div class="marquee-dot"></div></div>
-    <div class="marquee-item">Free Spirits Only<div class="marquee-dot"></div></div>
-  </div>
+<div class="marquee-track">
+<div class="marquee-item">BC Branded<div class="marquee-dot"></div></div>
+<div class="marquee-item">Vancouver, BC<div class="marquee-dot"></div></div>
+<div class="marquee-item">Made in Canada<div class="marquee-dot"></div></div>
+<div class="marquee-item">Work Hard, Adventure Harder<div class="marquee-dot"></div></div>
+<div class="marquee-item">West Coast Identity<div class="marquee-dot"></div></div>
+<div class="marquee-item">BC Branded<div class="marquee-dot"></div></div>
+<div class="marquee-item">Vancouver, BC<div class="marquee-dot"></div></div>
+<div class="marquee-item">Made in Canada<div class="marquee-dot"></div></div>
+<div class="marquee-item">Work Hard, Adventure Harder<div class="marquee-dot"></div></div>
+<div class="marquee-item">West Coast Identity<div class="marquee-dot"></div></div>
 </div>
-
+</div>
+<!-- COLLECTIONS -->
+<section class="collections-section">
+<div class="collections-header">
+<div>
+<div class="section-tag">Browse</div>
+<div class="section-h2" style="margin-bottom:0;">Shop by<br/><span class="dim">Collection</span></div>
+</div>
+<a class="view-all" href="https://an7pix-mc.myshopify.com/collections/all" target="_blank">View All Products →</a>
+</div>
+<div class="collections-grid">
+<a class="coll-card" href="athletic-wear.html">
+<img alt="Athletic Wear Collection" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-quarter-zip-sweatshirt-sandshell-front-6a30c38550b81.jpg?v=1781580685" style="object-position: center top;"/>
+<div class="coll-card-overlay"></div>
+<div class="coll-card-body">
+<div class="coll-tag">New Arrivals</div>
+<div class="coll-title">Athletic Wear</div>
+<div class="coll-sub">Performance gear built for the West Coast lifestyle</div>
+<div class="coll-btn">Shop Athletic →</div>
+<div class="coll-product-hint">Designer Hoodies · Flex-Fit Caps · Youth &amp; Kids Collection</div>
+</div>
+</a>
+<a class="coll-card" href="outdoor-collection.html">
+<img alt="Outdoor Collection" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a109f9955197.webp"/>
+<div class="coll-card-overlay"></div>
+<div class="coll-card-body">
+<div class="coll-tag">BC Collection</div>
+<div class="coll-title">Outdoor<br/>Collection</div>
+<div class="coll-sub">Eagles. Bears. Wolves. Orcas. — Born Wild. Raised BC.</div>
+<div class="coll-btn">Shop Outdoor →</div>
+<div class="coll-product-hint">Hoodies · Adventure Tees · Windbreakers · Beanies</div>
+</div>
+</a>
+</div>
+</section>
 <!-- FEATURED -->
-<section id="shop">
-  <div class="section-tag">Featured</div>
-  <div class="section-h2">New Arrivals<br><span class="dim">This Season</span></div>
-  <div class="feature-band">
-    <div class="band-panel">
-      <div class="band-bg">
-        <svg width="100%" height="100%" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="hg1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#1a2820"/>
-              <stop offset="100%" stop-color="#0c1410"/>
-            </linearGradient>
-          </defs>
-          <rect width="600" height="520" fill="url(#hg1)"/>
-          <!-- Wolf silhouette minimal -->
-          <ellipse cx="300" cy="290" rx="85" ry="100" fill="rgba(255,255,255,0.03)"/>
-          <!-- Hoodie shape -->
-          <rect x="170" y="160" width="260" height="260" rx="20" fill="rgba(20,22,18,0.8)"/>
-          <!-- Hood -->
-          <ellipse cx="300" cy="165" rx="90" ry="50" fill="rgba(18,20,16,0.9)"/>
-          <!-- Pocket -->
-          <rect x="230" y="330" width="140" height="50" rx="8" fill="rgba(255,255,255,0.04)"/>
-          <!-- Wolf graphic area -->
-          <circle cx="300" cy="250" r="60" fill="rgba(255,255,255,0.04)" stroke="rgba(232,84,26,0.25)" stroke-width="1"/>
-          <text x="300" y="256" text-anchor="middle" fill="rgba(232,84,26,0.4)" font-size="11" letter-spacing="2" font-family="Inter">WOLF EDITION</text>
-          <!-- Drawstrings -->
-          <line x1="265" y1="185" x2="255" y2="230" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>
-          <line x1="335" y1="185" x2="345" y2="230" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="band-overlay"></div>
-      <div class="band-content">
-        <div class="band-tag">Hoodies</div>
-        <div class="band-title">Vancouver Wolf<br>Hoodie Collection</div>
-        <div class="band-price">From $59.95 CAD</div>
-        <div class="band-cta">Shop Now <span class="band-arrow">→</span></div>
-      </div>
-    </div>
-    <div class="band-panel">
-      <div class="band-bg">
-        <svg width="100%" height="100%" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="hg2" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2a1a0a"/>
-              <stop offset="100%" stop-color="#1a0e06"/>
-            </linearGradient>
-          </defs>
-          <rect width="600" height="520" fill="url(#hg2)"/>
-          <!-- Tee shape -->
-          <polygon points="220,140 170,200 190,200 190,400 410,400 410,200 430,200 380,140 340,175 300,160 260,175" fill="rgba(20,15,10,0.85)" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-          <!-- Eagle graphic placeholder -->
-          <circle cx="300" cy="270" r="58" fill="rgba(255,255,255,0.03)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
-          <text x="300" y="276" text-anchor="middle" fill="rgba(232,84,26,0.35)" font-size="10" letter-spacing="2" font-family="Inter">EAGLE EDITION</text>
-        </svg>
-      </div>
-      <div class="band-overlay"></div>
-      <div class="band-content">
-        <div class="band-tag">Adventure Tees</div>
-        <div class="band-title">Eagle Collection<br>Adventure Tee</div>
-        <div class="band-price">From $39.95 CAD</div>
-        <div class="band-cta">Shop Now <span class="band-arrow">→</span></div>
-      </div>
-    </div>
-  </div>
+<section id="shop" style="background: linear-gradient(180deg, var(--dark) 0%, #3a3936 100%);">
+<div class="section-tag">Featured</div>
+<div class="section-h2">New Arrivals<br/><span class="dim">This Season</span></div>
+<div class="feature-band">
+<div class="band-panel">
+<div class="band-bg">
+<img alt="Vancouver Eagle Hoodie" data-product-page="https://an7pix-mc.myshopify.com/products/bc-branded-hoodie-vancouver-eagle-edition" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a109a8c33d99.webp"/>
+</div>
+<div class="band-overlay"></div>
+<div class="band-content">
+<div class="band-tag">Hoodies</div>
+<div class="band-title">Vancouver Eagle<br/>Hoodie Collection</div>
+<div class="band-price">From $59.95 CAD</div>
+<a class="band-cta" href="https://an7pix-mc.myshopify.com/products/bc-branded-hoodie-vancouver-eagle-edition" target="_blank">Shop Now <span class="band-arrow">→</span></a>
+</div>
+</div>
+<div class="band-panel">
+<div class="band-bg">
+<img alt="BC Branded Bear Hoodie" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a10a16f90429.webp"/>
+</div>
+<div class="band-overlay"></div>
+<div class="band-content">
+<div class="band-tag">BC Branded</div>
+<div class="band-title">BC Branded Bear<br/>Hoodie Collection</div>
+<div class="band-price">From $59.95 CAD</div>
+<a class="band-cta" href="https://an7pix-mc.myshopify.com/products/the-original-bc-branded-hoodie" target="_blank">Shop Now <span class="band-arrow">→</span></a>
+</div>
+</div>
+</div>
 </section>
-
 <!-- PRODUCTS -->
-<section style="padding-top:0">
-  <div class="products-header">
-    <div>
-      <div class="section-tag">Shop All</div>
-      <div class="section-h2">The<br><span class="dim">Collection</span></div>
-    </div>
-    <a href="#" class="view-all">View All →</a>
-  </div>
-  <div class="products" id="products">
-
-    <div class="product-card">
-      <div class="product-img">
-        <svg viewBox="0 0 280 350" xmlns="http://www.w3.org/2000/svg">
-          <rect width="280" height="350" fill="#1a1c17"/>
-          <rect x="60" y="60" width="160" height="230" rx="12" fill="#111310"/>
-          <ellipse cx="140" cy="65" rx="55" ry="32" fill="#0e100d"/>
-          <rect x="90" y="210" width="100" height="40" rx="6" fill="rgba(255,255,255,0.03)"/>
-          <circle cx="140" cy="160" r="42" fill="rgba(255,255,255,0.03)" stroke="rgba(200,168,75,0.18)" stroke-width="1"/>
-          <line x1="117" y1="78" x2="110" y2="115" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="163" y1="78" x2="170" y2="115" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" stroke-linecap="round"/>
-          <text x="140" y="164" text-anchor="middle" fill="rgba(200,168,75,0.3)" font-size="8" letter-spacing="1.5" font-family="Inter">ORCA</text>
-        </svg>
-        <div class="product-img-overlay">
-          <div class="product-quick">Quick Add</div>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-type">Hoodie</div>
-        <div class="product-name">Vancouver — Orca<br>Collection</div>
-        <div class="product-bottom">
-          <div class="product-price">$59.95</div>
-          <div class="product-colors">
-            <div class="swatch" style="background:#111310"></div>
-            <div class="swatch" style="background:#1e2a3a"></div>
-            <div class="swatch" style="background:#3a3228"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img">
-        <svg viewBox="0 0 280 350" xmlns="http://www.w3.org/2000/svg">
-          <rect width="280" height="350" fill="#181a14"/>
-          <polygon points="80,60 50,110 65,110 65,285 215,285 215,110 230,110 200,60 165,90 140,76 115,90" fill="#0f110d" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-          <circle cx="140" cy="178" r="44" fill="rgba(255,255,255,0.03)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
-          <text x="140" y="182" text-anchor="middle" fill="rgba(200,168,75,0.28)" font-size="8" letter-spacing="1.5" font-family="Inter">EAGLE</text>
-        </svg>
-        <div class="product-img-overlay">
-          <div class="product-quick">Quick Add</div>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-type">Adventure Tee</div>
-        <div class="product-name">BC Branded Eagle<br>Adventure Tee</div>
-        <div class="product-bottom">
-          <div class="product-price">$39.95</div>
-          <div class="product-colors">
-            <div class="swatch" style="background:#0f110d"></div>
-            <div class="swatch" style="background:#2a3020"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img">
-        <svg viewBox="0 0 280 350" xmlns="http://www.w3.org/2000/svg">
-          <rect width="280" height="350" fill="#141816"/>
-          <rect x="55" y="55" width="170" height="240" rx="14" fill="#0d100e"/>
-          <rect x="85" y="55" width="110" height="22" rx="6" fill="#0a0c0b"/>
-          <rect x="95" y="210" width="90" height="42" rx="7" fill="rgba(255,255,255,0.03)"/>
-          <!-- Zipper line -->
-          <line x1="140" y1="77" x2="140" y2="215" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" stroke-dasharray="4,3"/>
-          <circle cx="140" cy="165" r="44" fill="rgba(255,255,255,0.02)" stroke="rgba(200,168,75,0.15)" stroke-width="1"/>
-          <text x="140" y="169" text-anchor="middle" fill="rgba(200,168,75,0.28)" font-size="8" letter-spacing="1.5" font-family="Inter">WINDBREAKER</text>
-        </svg>
-        <div class="product-img-overlay">
-          <div class="product-quick">Quick Add</div>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-type">Windbreaker</div>
-        <div class="product-name">BC Branded Eagle<br>Windbreaker</div>
-        <div class="product-bottom">
-          <div class="product-price">$59.95</div>
-          <div class="product-colors">
-            <div class="swatch" style="background:#0d100e"></div>
-            <div class="swatch" style="background:#1e2a1e"></div>
-            <div class="swatch" style="background:#2a2420"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-img">
-        <svg viewBox="0 0 280 350" xmlns="http://www.w3.org/2000/svg">
-          <rect width="280" height="350" fill="#1c1814"/>
-          <rect x="60" y="60" width="160" height="230" rx="12" fill="#151210"/>
-          <ellipse cx="140" cy="65" rx="55" ry="32" fill="#111009"/>
-          <rect x="90" y="210" width="100" height="40" rx="6" fill="rgba(255,255,255,0.03)"/>
-          <circle cx="140" cy="160" r="42" fill="rgba(200,168,75,0.04)" stroke="rgba(232,84,26,0.25)" stroke-width="1"/>
-          <line x1="117" y1="78" x2="110" y2="115" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="163" y1="78" x2="170" y2="115" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-linecap="round"/>
-          <text x="140" y="164" text-anchor="middle" fill="rgba(232,84,26,0.35)" font-size="8" letter-spacing="1.5" font-family="Inter">WOLF</text>
-        </svg>
-        <div class="product-img-overlay">
-          <div class="product-quick">Quick Add</div>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-type">Hoodie</div>
-        <div class="product-name">BC Branded Wolf<br>Collection</div>
-        <div class="product-bottom">
-          <div class="product-price">$59.95</div>
-          <div class="product-colors">
-            <div class="swatch" style="background:#151210"></div>
-            <div class="swatch" style="background:#1a1e28"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+<section style="padding-top:0; background: linear-gradient(180deg, #3a3936 0%, #6e6c67 100%);">
+<div class="products-header">
+<div>
+<div class="section-tag">Best Sellers</div>
+<div class="section-h2">Featured<br/><span class="dim">Products</span></div>
+</div>
+<a class="view-all" href="https://an7pix-mc.myshopify.com/collections/all" target="_blank">View All Products →</a>
+</div>
+<div class="products" id="products">
+<div class="product-card">
+<div class="product-img">
+<img alt="BC Branded Orca Hoodie" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a109d1c2c402.webp"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-orca-collection" data-variants='{"S": "52913734451509", "M": "52913734484277", "L": "52913734517045", "XL": "52913734549813", "2XL": "52913734582581", "3XL": "52913734615349"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Hoodie</div>
+<div class="product-name">BC Branded — Orca<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img alt="BC Branded Wolf Hoodie" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a109bf44f92c.webp"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-wolf-collection" data-variants='{"S": "52913728258357", "M": "52913728291125", "L": "52913728323893", "XL": "52913728356661", "2XL": "52913728389429", "3XL": "52913728422197"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Hoodie</div>
+<div class="product-name">BC Branded — Wolf<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div>
+</div>
+<div class="product-card">
+<div class="product-img">
+<img alt="Vancouver Wolf Hoodie" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a10d62943a36.webp"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-vancouver-wolf-hoodie-collection" data-variants='{"S": "52914006065461", "M": "52914006098229", "L": "52914006130997", "XL": "52914006163765", "2XL": "52914006196533", "3XL": "52914006229301"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Hoodie</div>
+<div class="product-name">Vancouver — Wolf<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="Vancouver Bear Hoodie" loading="lazy" src="BC%20Branded/unisex-premium-pullover-hoodie-black-front-6a109f9955197.webp"/>
+<div class="product-img-overlay" data-handle="bc-branded-hoodie-vancouver-bear-collection" data-variants='{"S": "52913749066037", "M": "52913749098805", "L": "52913749131573", "XL": "52913749164341", "2XL": "52913749197109", "3XL": "52913749229877"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Hoodie</div>
+<div class="product-name">Vancouver — Bear<br/>Collection</div>
+<div class="product-bottom">
+<div class="product-price">$59.95</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="BC Branded Eagle Tee" loading="lazy" src="BC%20Branded/unisex-staple-t-shirt-black-heather-front-6a10938eefd40.webp"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-eagle-adventure-tee" data-variants='{"S": "52913641947445", "M": "52913641980213", "L": "52913642012981", "XL": "52913642045749", "2XL": "52913642078517", "3XL": "52913642111285"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Adventure Tee</div>
+<div class="product-name">BC Branded — Eagle<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="BC Branded Wolf Tee" loading="lazy" src="BC%20Branded/unisex-staple-t-shirt-black-heather-front-6a10915013960.webp"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-wolf-adventure-tee" data-variants='{"S": "52913629102389", "M": "52913629135157", "L": "52913629167925", "XL": "52913629200693", "2XL": "52913629233461", "3XL": "52913629266229"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Adventure Tee</div>
+<div class="product-name">BC Branded — Wolf<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="Vancouver Bear Tee" loading="lazy" src="BC%20Branded/unisex-staple-t-shirt-black-heather-front-6a108c5fb8a1e.webp"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-vancouver-adventure-tee" data-variants='{"S": "52913569825077", "M": "52913569857845", "L": "52913569890613", "XL": "52913569923381", "2XL": "52913569956149", "3XL": "52913569988917"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Adventure Tee</div>
+<div class="product-name">Vancouver — Bear<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="Vancouver Orca Tee" loading="lazy" src="BC%20Branded/unisex-staple-t-shirt-black-heather-front-6a108e005a2ff.webp"/>
+<div class="product-img-overlay" data-handle="unisex-bc-branded-orca-adventure-tee" data-variants='{"S": "52913598005557", "M": "52913598038325", "L": "52913598071093", "XL": "52913598103861", "2XL": "52913598136629", "3XL": "52913598169397"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2a2a2a"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Adventure Tee</div>
+<div class="product-name">Vancouver — Orca<br/>Adventure Tee</div>
+<div class="product-bottom">
+<div class="product-price">$39.95</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="BC Branded Trucker Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/retro-trucker-hat-black-front-6a11ca2446f60.jpg?v=1779550848"/>
+<div class="product-img-overlay" data-handle="trucker-cap" data-variants='{"Black":"52915107299637","Black/White":"52915107332405","Navy":"52915107365173","Navy/White":"52915107397941","Charcoal":"52915107463477","Dark Heather Gray":"52915107496245","Evergreen":"52915107529013","Caramel":"52915107561781","Pink":"52915107594549"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div><div class="swatch" style="background:#1a2540" title="Navy"></div><div class="swatch" style="background:#3d3d3d" title="Charcoal"></div><div class="swatch" style="background:#2d5c35" title="Evergreen"></div><div class="swatch" style="background:#a86830" title="Caramel"></div><div class="swatch" style="background:#c97a8a" title="Pink"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Headwear</div>
+<div class="product-name">BC Branded<br/>Trucker Cap</div>
+<div class="product-bottom">
+<div class="product-price">$24.38</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="BC Branded Stay Wild Cuff Beanie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/cuffed-beanie-black-front-6a10a9d33c234.jpg?v=1779476958"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-stay-wild-cuff-beanie" data-variants='{"Black":"52913825710389","Navy":"52913825743157","Dark Grey":"52913825775925","Royal":"52913825808693","Olive":"52913825841461","Heather Grey":"52913825874229","Baby Pink":"52913825906997","White":"52913825939765"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div><div class="swatch" style="background:#1a2540" title="Navy"></div><div class="swatch" style="background:#3d3d3d" title="Dark Grey"></div><div class="swatch" style="background:#2040a0" title="Royal"></div><div class="swatch" style="background:#4a5c30" title="Olive"></div><div class="swatch" style="background:#c8c8c0" title="Heather Grey"></div><div class="swatch" style="background:#c97a8a" title="Baby Pink"></div><div class="swatch" style="background:#f0ece4" title="White"></div></div><div class="size-picker"><div class="size-label">Select Size</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Headwear</div>
+<div class="product-name">Stay Wild<br/>Cuff Beanie</div>
+<div class="product-bottom">
+<div class="product-price">$34.99</div>
+</div>
+</div>
+</div><div class="product-card">
+<div class="product-img">
+<img alt="Limited Edition BC Branded Bear Shield Snapback" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/classic-snapback-black-silver-front-6a4453a0bc987.jpg?v=1782862780"/>
+<div class="product-img-overlay" data-handle="limited-edition-bc-branded-bear-shield-snapback" data-variants='{"Dark Navy":"53052614017333","Black":"53052614050101","Black/ Neon Pink":"53052614082869","Black/ Teal":"53052614115637","Black/ Silver":"53052614148405","Royal Blue":"53052614181173","Navy":"53052614213941","Spruce":"53052614246709","Green Camo":"53052614279477","Dark Grey":"53052614312245"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a2540" title="Dark Navy"></div><div class="swatch" style="background:#111310" title="Black"></div><div class="swatch" style="background:#1a4a9a" title="Royal Blue"></div><div class="swatch" style="background:#2d5c35" title="Spruce"></div><div class="swatch" style="background:#3a4a2a" title="Green Camo"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey"></div></div><div class="size-picker"><div class="size-label">Select Color</div><div class="size-options"></div></div></div></div>
+</div>
+<div class="product-info">
+<div class="product-type">Headwear <span class="new-badge">New</span></div>
+<div class="product-name">Bear Shield<br/>Snapback Cap</div>
+<div class="product-bottom">
+<div class="product-price">$54.99</div>
+</div>
+</div>
+</div></div>
 </section>
-
+<!-- NEW DROP BANNER -->
+<div class="new-drop-banner">
+<div class="drop-left">
+<div class="drop-eyebrow">Just Dropped</div>
+<div class="drop-title">The Stay Wild<br/>Collection</div>
+<div class="drop-sub">New styles just landed — windbreakers, beanies, Champion hoodies, and limited-edition tees. West Coast ready.</div>
+<div class="drop-tags">
+<div class="drop-tag">Windbreakers</div>
+<div class="drop-tag">Stay Wild Hoodies</div>
+<div class="drop-tag">Cuff Beanies</div>
+<div class="drop-tag">Vintage Tees</div>
+<div class="drop-tag">Kids &amp; Youth</div>
+</div>
+<a class="btn-primary" href="https://an7pix-mc.myshopify.com/collections/all" target="_blank">Shop New Drops →</a>
+<div class="drop-email-wrap">
+<div class="drop-email-label">First to know every drop</div>
+<div class="drop-email-row">
+<input class="drop-email-input" placeholder="Enter your email" type="email"/>
+<button class="drop-email-btn" onclick="var inp=this.previousElementSibling;if(!inp.value||!inp.value.includes('@')){inp.style.borderColor='#E8541A';return;}this.textContent='✓ You\'re in!';this.style.background='#2d4a2a';inp.disabled=true;this.disabled=true;">Notify Me →</button>
+</div>
+<div class="drop-email-hint">No spam. Unsubscribe anytime.</div>
+</div>
+</div>
+<div class="drop-right">
+<div class="drop-stat">
+<div class="drop-stat-num">30+</div>
+<div class="drop-stat-lbl">New Styles</div>
+</div>
+<div class="drop-stat">
+<div class="drop-stat-num">4</div>
+<div class="drop-stat-lbl">Collections</div>
+</div>
+</div>
+</div>
 <!-- STORY -->
 <div class="story" id="story">
-  <div class="story-visual" style="background:#0a0f08;">
-    <img
-      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=85&fit=crop&crop=center"
-      alt="BC mountain landscape"
-      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:24px;"
-    />
-    <div style="position:absolute;inset:0;border-radius:24px;background:linear-gradient(180deg,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 100%);"></div>
-    <!-- BC Branded badge overlay -->
-    <div style="position:absolute;bottom:32px;left:32px;z-index:2;">
-      <div style="background:rgba(0,0,0,0.55);backdrop-filter:blur(16px);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:20px 28px;">
-        <div style="font-size:24px;font-weight:800;letter-spacing:4px;color:rgba(200,168,75,0.85);font-family:Inter,sans-serif;">BC</div>
-        <div style="font-size:9px;font-weight:600;letter-spacing:3px;color:rgba(200,168,75,0.45);font-family:Inter,sans-serif;margin-top:2px;">BRANDED CO.</div>
-      </div>
-    </div>
-  </div>
-  <div class="story-text">
-    <div class="section-tag">Our Story</div>
-    <h2 class="story-h2">This Is<br>West Coast<br>Identity</h2>
-    <p class="story-body">Born in Vancouver, BC and inspired by the wild beauty of the Pacific Northwest, BC Branded is here for the explorers, adventurers, creators, and free spirits who live for the outdoors. From mountain peaks and coastal highways to campfire nights and city streets.</p>
-    <div class="story-stats">
-      <div>
-        <div class="story-stat-val">100%</div>
-        <div class="story-stat-lbl">Original Design</div>
-      </div>
-      <div>
-        <div class="story-stat-val">BC</div>
-        <div class="story-stat-lbl">Born & Raised</div>
-      </div>
-      <div>
-        <div class="story-stat-val">∞</div>
-        <div class="story-stat-lbl">Adventures Ahead</div>
-      </div>
-    </div>
-    <a href="#shop" class="btn-primary">Shop the Collection</a>
-  </div>
+<div class="story-visual" style="background:#0a0f08;">
+<img alt="BC mountain landscape" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&amp;q=85&amp;fit=crop&amp;crop=center" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:24px;"/>
+<div style="position:absolute;inset:0;border-radius:24px;background:linear-gradient(180deg,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 100%);"></div>
+<!-- BC Branded badge overlay -->
+<div style="position:absolute;bottom:32px;left:32px;z-index:2;">
+<div style="background:rgba(0,0,0,0.55);backdrop-filter:blur(16px);border:1px solid rgba(200,168,75,0.25);border-radius:14px;padding:20px 28px;">
+<div style="font-size:24px;font-weight:800;letter-spacing:4px;color:rgba(200,168,75,0.85);font-family:Inter,sans-serif;">BC</div>
+<div style="font-size:9px;font-weight:600;letter-spacing:3px;color:rgba(200,168,75,0.45);font-family:Inter,sans-serif;margin-top:2px;">BRANDED CO.</div>
 </div>
-
+</div>
+</div>
+<div class="story-text">
+<div class="section-tag">Our Story</div>
+<h2 class="story-h2">This Is<br/>West Coast<br/>Identity</h2>
+<p class="story-body">Born in Vancouver, BC and inspired by the wild beauty of the Pacific Northwest, BC Branded is here for the explorers, adventurers, creators, and free spirits who live for the outdoors. From mountain peaks and coastal highways to campfire nights and city streets.</p>
+<div class="story-stats">
+<div>
+<div class="story-stat-val">100%</div>
+<div class="story-stat-lbl">Original Design</div>
+</div>
+<div>
+<div class="story-stat-val">BC</div>
+<div class="story-stat-lbl">Born &amp; Raised</div>
+</div>
+<div>
+<div class="story-stat-val">∞</div>
+<div class="story-stat-lbl">Adventures Ahead</div>
+</div>
+</div>
+<a class="btn-primary" href="#shop">Shop the Collection</a>
+</div>
+</div>
 <!-- VALUES -->
 <div style="max-width:1280px;margin:0 auto;padding:0 40px 120px">
-  <div class="values">
-    <div class="value-item">
-      <div class="value-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M11 2L13.5 8.5H20L14.5 12.5L16.5 19L11 15L5.5 19L7.5 12.5L2 8.5H8.5L11 2Z" stroke="#c8a84b" stroke-width="1.5" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="value-title">Original Design</div>
-      <div class="value-desc">Every piece is an original BC Branded creation — no off-the-shelf graphics, no shortcuts. Pure Pacific Northwest artistry.</div>
-    </div>
-    <div class="value-item">
-      <div class="value-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M11 3C7 3 3 7 3 11s4 8 8 8 8-4 8-8-4-8-8-8z" stroke="#c8a84b" stroke-width="1.5"/>
-          <path d="M11 7v4l3 3" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="value-title">West Coast Culture</div>
-      <div class="value-desc">We don't just sell clothes — we represent a lifestyle rooted in mountains, ocean, wildlife, and the untamed BC spirit.</div>
-    </div>
-    <div class="value-item">
-      <div class="value-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <path d="M4 11l5 5L18 6" stroke="#c8a84b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <div class="value-title">Premium Quality</div>
-      <div class="value-desc">Built to move with you — from alpine trails to city streets. Every stitch made to last as long as your next adventure.</div>
-    </div>
-  </div>
+<div class="values">
+<div class="value-item">
+<div class="value-icon">
+<svg fill="none" height="22" viewbox="0 0 22 22" width="22">
+<path d="M11 2L13.5 8.5H20L14.5 12.5L16.5 19L11 15L5.5 19L7.5 12.5L2 8.5H8.5L11 2Z" stroke="#c8a84b" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
 </div>
-
+<div class="value-title">Original Design</div>
+<div class="value-desc">Every piece is an original BC Branded creation — no off-the-shelf graphics, no shortcuts. Pure Pacific Northwest artistry.</div>
+</div>
+<div class="value-item">
+<div class="value-icon">
+<svg fill="none" height="22" viewbox="0 0 22 22" width="22">
+<path d="M11 3C7 3 3 7 3 11s4 8 8 8 8-4 8-8-4-8-8-8z" stroke="#c8a84b" stroke-width="1.5"></path>
+<path d="M11 7v4l3 3" stroke="#c8a84b" stroke-linecap="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="value-title">West Coast Culture</div>
+<div class="value-desc">We don't just sell clothes — we represent a lifestyle rooted in mountains, ocean, wildlife, and the untamed BC spirit.</div>
+</div>
+<div class="value-item">
+<div class="value-icon">
+<svg fill="none" height="22" viewbox="0 0 22 22" width="22">
+<path d="M4 11l5 5L18 6" stroke="#c8a84b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</div>
+<div class="value-title">Premium Quality</div>
+<div class="value-desc">Built to move with you — from alpine trails to city streets. Every stitch made to last as long as your next adventure.</div>
+</div>
+</div>
+</div>
 <!-- FOOTER -->
+<section class="hikes-section">
+<div class="hikes-header">
+<div class="hikes-eyebrow">Our Backyard</div>
+<h2 class="hikes-title">North Shore <span>Trail Map</span></h2>
+<p class="hikes-subtitle">The mountains that inspire every stitch. These are our trails.</p>
+</div>
+<div class="hikes-layout">
+<div id="hike-map"></div>
+<div class="hike-list">
+<div class="hike-card active" data-id="0" data-lat="49.3783" data-lng="-123.0814">
+<div class="hike-dot" style="background:#E8541A"></div>
+<div class="hike-details">
+<div class="hike-name">Grouse Grind</div>
+<div class="hike-meta"><span>2.9 km</span><span>853 m gain</span><span>Hard</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="1" data-lat="49.3167" data-lng="-122.9500">
+<div class="hike-dot" style="background:#8a9e8c"></div>
+<div class="hike-details">
+<div class="hike-name">Quarry Rock</div>
+<div class="hike-meta"><span>3.7 km</span><span>120 m gain</span><span>Easy</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="2" data-lat="49.3453" data-lng="-123.0232">
+<div class="hike-dot" style="background:#c8a84b"></div>
+<div class="hike-details">
+<div class="hike-name">Lynn Canyon Loop</div>
+<div class="hike-meta"><span>4.2 km</span><span>180 m gain</span><span>Easy</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="3" data-lat="49.3705" data-lng="-122.9473">
+<div class="hike-dot" style="background:#E8541A"></div>
+<div class="hike-details">
+<div class="hike-name">Dog Mountain</div>
+<div class="hike-meta"><span>7.2 km</span><span>280 m gain</span><span>Moderate</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="4" data-lat="49.4017" data-lng="-123.0317">
+<div class="hike-dot" style="background:#8a9e8c"></div>
+<div class="hike-details">
+<div class="hike-name">Hanes Valley</div>
+<div class="hike-meta"><span>16 km</span><span>1000 m gain</span><span>Hard</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="5" data-lat="49.3833" data-lng="-123.1500">
+<div class="hike-dot" style="background:#c8a84b"></div>
+<div class="hike-details">
+<div class="hike-name">Hollyburn Peak</div>
+<div class="hike-meta"><span>9 km</span><span>570 m gain</span><span>Moderate</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="6" data-lat="49.3654" data-lng="-122.9566">
+<div class="hike-dot" style="background:#E8541A"></div>
+<div class="hike-details">
+<div class="hike-name">Mystery Lake</div>
+<div class="hike-meta"><span>5.8 km</span><span>410 m gain</span><span>Moderate</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+<div class="hike-card" data-id="7" data-lat="49.4100" data-lng="-123.2133">
+<div class="hike-dot" style="background:#8a9e8c"></div>
+<div class="hike-details">
+<div class="hike-name">Cypress Falls</div>
+<div class="hike-meta"><span>3.8 km</span><span>130 m gain</span><span>Easy</span></div>
+</div>
+<div class="hike-arrow">→</div>
+</div>
+</div>
+</div>
+</section>
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="footer-logo">BC <span>Branded</span> Co.</div>
-      <div class="footer-tagline">Adventure apparel inspired by British Columbia's mountains, forests, and ocean. West Coast identity for the bold.</div>
-      <a href="#shop" class="btn-ghost" style="display:inline-flex;font-size:11px;padding:12px 24px">Shop Now →</a>
-    </div>
-    <div class="footer-col">
-      <h4>Shop</h4>
-      <a href="#">Hoodies</a>
-      <a href="#">Adventure Tees</a>
-      <a href="#">Windbreakers</a>
-      <a href="#">New Arrivals</a>
-      <a href="#">Sale</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#">Our Story</a>
-      <a href="#">Sustainability</a>
-      <a href="#">Careers</a>
-      <a href="#">Press</a>
-    </div>
-    <div class="footer-col">
-      <h4>Support</h4>
-      <a href="#">FAQ</a>
-      <a href="#">Shipping Policy</a>
-      <a href="#">Returns</a>
-      <a href="#">Contact Us</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© 2026 BC Branded Co. — Vancouver, BC. All rights reserved.</div>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Cookies</a>
-    </div>
-  </div>
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">BC <span>Branded</span> Co.</div>
+<div class="footer-tagline">Adventure apparel inspired by British Columbia's mountains, forests, and ocean. West Coast identity for the bold.</div>
+<a class="btn-ghost" href="#shop" style="display:inline-flex;font-size:11px;padding:12px 24px">Shop Now →</a>
+</div>
+<div class="footer-col">
+<h4>Shop</h4>
+<a href="#">Hoodies</a>
+<a href="#">Adventure Tees</a>
+<a href="#">Windbreakers</a>
+<a href="#">New Arrivals</a>
+<a href="#">Sale</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="#">Our Story</a>
+<a href="#">Sustainability</a>
+<a href="#">Careers</a>
+<a href="#">Press</a>
+</div>
+<div class="footer-col">
+<h4>Support</h4>
+<a href="#">FAQ</a>
+<a href="#">Shipping Policy</a>
+<a href="#">Returns</a>
+<a href="#">Contact Us</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 BC Branded Co. — Vancouver, BC. All rights reserved.</div>
+<div class="footer-links">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Cookies</a>
+</div>
+</div>
 </footer>
-
 <script>
 /* Photo parallax on scroll */
 const heroPhoto = document.getElementById('hero-photo');
@@ -1223,11 +1628,240 @@ const navEl = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
     navEl.style.background = 'rgba(14,15,12,0.92)';
+    navEl.style.backdropFilter = 'blur(24px)';
+    navEl.style.webkitBackdropFilter = 'blur(24px)';
+    navEl.style.borderBottomColor = 'rgba(255,255,255,0.06)';
   } else {
-    navEl.style.background = 'rgba(14,15,12,0.6)';
+    navEl.style.background = 'transparent';
+    navEl.style.backdropFilter = 'none';
+    navEl.style.webkitBackdropFilter = 'none';
+    navEl.style.borderBottomColor = 'transparent';
   }
 });
 </script>
+<script>
+(function() {
+  var DOMAIN = 'an7pix-mc.myshopify.com';
+  var TOKEN  = 'fea71cefe8f94954fd6805e9de531307';
 
-</body>
+  // Populate size buttons from data-variants on each overlay
+  document.querySelectorAll('.product-img-overlay[data-variants]').forEach(function(overlay) {
+    var variants = JSON.parse(overlay.getAttribute('data-variants'));
+    var container = overlay.querySelector('.size-options');
+    if (!container) return;
+    Object.keys(variants).forEach(function(size) {
+      var btn = document.createElement('button');
+      btn.className = 'size-btn';
+      btn.dataset.variant = variants[size];
+      btn.dataset.size = size;
+      btn.textContent = size;
+      container.appendChild(btn);
+    });
+  });
+
+  // Handle size button clicks → Shopify cart → checkout redirect
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.size-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    var variantId = btn.dataset.variant;
+    var origText = btn.textContent;
+    btn.classList.add('loading');
+    btn.textContent = '…';
+
+    // Direct Shopify cart URL — always works regardless of custom domain
+    window.location.href = 'https://an7pix-mc.myshopify.com/cart/' + variantId + ':1?storefront=true';
+  });
+})();
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function() {
+  var hikes = [
+    { name: "Grouse Grind",    lat: 49.3783, lng: -123.0814, color: "#E8541A", dist: "2.9 km", gain: "853 m", diff: "Hard" },
+    { name: "Quarry Rock",     lat: 49.3167, lng: -122.9500, color: "#8a9e8c", dist: "3.7 km", gain: "120 m", diff: "Easy" },
+    { name: "Lynn Canyon",     lat: 49.3453, lng: -123.0232, color: "#c8a84b", dist: "4.2 km", gain: "180 m", diff: "Easy" },
+    { name: "Dog Mountain",    lat: 49.3705, lng: -122.9473, color: "#E8541A", dist: "7.2 km", gain: "280 m", diff: "Moderate" },
+    { name: "Hanes Valley",    lat: 49.4017, lng: -123.0317, color: "#8a9e8c", dist: "16 km",  gain: "1000 m", diff: "Hard" },
+    { name: "Hollyburn Peak",  lat: 49.3833, lng: -123.1500, color: "#c8a84b", dist: "9 km",   gain: "570 m", diff: "Moderate" },
+    { name: "Mystery Lake",    lat: 49.3654, lng: -122.9566, color: "#E8541A", dist: "5.8 km", gain: "410 m", diff: "Moderate" },
+    { name: "Cypress Falls",   lat: 49.4100, lng: -123.2133, color: "#8a9e8c", dist: "3.8 km", gain: "130 m", diff: "Easy" }
+  ];
+
+  var map = L.map('hike-map', { zoomControl: true, scrollWheelZoom: false }).setView([49.37, -123.05], 11);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    maxZoom: 18
+  }).addTo(map);
+
+  var markers = [];
+
+  hikes.forEach(function(h, i) {
+    var icon = L.divIcon({
+      className: '',
+      html: '<div style="width:14px;height:14px;background:' + h.color + ';border-radius:50%;border:2px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,0.6)"></div>',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7]
+    });
+    var marker = L.marker([h.lat, h.lng], { icon: icon }).addTo(map);
+    marker.bindPopup(
+      '<div style="font-family:Inter,sans-serif;min-width:140px">' +
+      '<strong style="font-size:13px">' + h.name + '</strong><br>' +
+      '<span style="font-size:11px;color:#888">' + h.dist + ' · ' + h.gain + ' gain · ' + h.diff + '</span>' +
+      '</div>'
+    );
+    markers.push(marker);
+  });
+
+  // Hike card click → fly to + open popup
+  document.querySelectorAll('.hike-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      document.querySelectorAll('.hike-card').forEach(function(c) { c.classList.remove('active'); });
+      card.classList.add('active');
+      var id = parseInt(card.dataset.id);
+      map.flyTo([hikes[id].lat, hikes[id].lng], 13, { duration: 0.8 });
+      markers[id].openPopup();
+    });
+  });
+
+  // First card open by default
+  markers[0].openPopup();
+})();
+</script>
+<script>
+// ── COLOR SWATCH SWITCHER (dynamic, loads all colors from Shopify) ──
+(function() {
+  var DOMAIN = 'an7pix-mc.myshopify.com';
+  var TOKEN  = 'fea71cefe8f94954fd6805e9de531307';
+
+  // Color name → hex mapping
+  var COLOR_HEX = {
+    'black':'#111111','vintage black':'#2a2828','solid black blend':'#1a1a1a',
+    'white':'#f5f5f5','cream':'#f0ece4','natural':'#e8e0d0',
+    'forest green':'#2d4a2a','military green':'#4a5a3a','agave':'#7aaa8a','pine':'#2d3d28',
+    'alpine green':'#4a6741','pigment alpine green':'#4a6741',
+    'navy':'#1a2a4a','heather navy':'#2a3a5a','slate blue':'#4a5f7a','pigment slate blue':'#4a5f7a','heather slate':'#606878',
+    'grey':'#6a6a6a','gray':'#6a6a6a','carbon grey':'#4a4a4a','dark grey heather':'#505050','storm':'#607080','charcoal':'#3a3a3a',
+    'red':'#8b1a1a','team red':'#8b1a1a','maroon':'#7a2a2a','pigment maroon':'#7a2a2a','berry':'#7a2a4a',
+    'pink':'#e88aa0','pigment pink':'#c97a8a','dusty rose':'#d4908a','peach':'#e8a878','heather mauve':'#c890a0',
+    'blue':'#3a6aaa','light blue':'#7aaac7','pigment light blue':'#7aaac7','turquoise':'#40b0b0',
+    'orange':'#E8541A','adobe':'#c87048',
+    'brown':'#8a6a4a','latte':'#c8a87a','khaki':'#b8a878','tan':'#c8a870',
+    'purple':'#6a4a8a','lavender':'#b0a0c8',
+    'yellow':'#d4b840','gold':'#c8a84b'
+  };
+
+  function getHex(colorName) {
+    var key = colorName.toLowerCase();
+    if (COLOR_HEX[key]) return COLOR_HEX[key];
+    for (var k in COLOR_HEX) {
+      if (key.indexOf(k) !== -1 || k.indexOf(key) !== -1) return COLOR_HEX[k];
+    }
+    return '#888888';
+  }
+
+  function fetchAndBuildSwatches(card) {
+    var overlay = card.querySelector('.product-img-overlay');
+    if (!overlay || !overlay.dataset.handle) return;
+    var handle = overlay.dataset.handle;
+
+    fetch('https://' + DOMAIN + '/api/2024-01/graphql.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Shopify-Storefront-Access-Token': TOKEN },
+      body: JSON.stringify({ query:
+        '{ product(handle: "' + handle + '") { variants(first: 50) { edges { node { id selectedOptions { name value } image { url } } } } } }'
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var edges = data.data && data.data.product && data.data.product.variants.edges || [];
+
+      // Build color map: colorName → { image, sizes: {S: variantId, ...} }
+      var colors = {};
+      var colorOrder = [];
+      edges.forEach(function(e) {
+        var opts = {};
+        e.node.selectedOptions.forEach(function(o) { opts[o.name] = o.value; });
+        var color = opts['Color'] || opts['Colour'] || '';
+        var size  = opts['Size']  || '';
+        var vid   = e.node.id.split('/').pop();
+        var img   = e.node.image ? e.node.image.url : '';
+        if (!color) return;
+        if (!colors[color]) { colors[color] = { image: img, sizes: {} }; colorOrder.push(color); }
+        if (size) colors[color].sizes[size] = vid;
+      });
+
+      if (colorOrder.length < 1) return;
+
+      // Find or create the overlay-colors container
+      var overlayBottom = overlay.querySelector('.overlay-bottom');
+      if (!overlayBottom) return;
+      var colorsDiv = overlayBottom.querySelector('.overlay-colors');
+      if (!colorsDiv) {
+        colorsDiv = document.createElement('div');
+        colorsDiv.className = 'overlay-colors';
+        overlayBottom.insertBefore(colorsDiv, overlayBottom.firstChild);
+      }
+
+      // Rebuild swatches
+      colorsDiv.innerHTML = '<span class="ov-color-label">Color</span>';
+      var swatchEls = [];
+
+      colorOrder.forEach(function(colorName, idx) {
+        var sw = document.createElement('div');
+        sw.className = 'swatch';
+        sw.title = colorName;
+        sw.style.background = getHex(colorName);
+        sw.style.border = '2px solid rgba(255,255,255,0.6)';
+        sw.style.width = '14px';
+        sw.style.height = '14px';
+        sw.style.borderRadius = '50%';
+        sw.style.cursor = 'pointer';
+        sw.style.flexShrink = '0';
+        colorsDiv.appendChild(sw);
+        swatchEls.push(sw);
+
+        sw.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          // Highlight selected
+          swatchEls.forEach(function(s) { s.style.outline = ''; s.style.outlineOffset = ''; });
+          sw.style.outline = '2px solid #fff';
+          sw.style.outlineOffset = '2px';
+
+          // Swap image
+          var img = card.querySelector('.product-img img');
+          if (img && colors[colorName].image) img.src = colors[colorName].image;
+
+          // Rebuild size buttons for this color
+          var container = overlay.querySelector('.picker-options, .size-options');
+          if (container) {
+            container.innerHTML = '';
+            var sizesObj = colors[colorName].sizes;
+            Object.keys(sizesObj).forEach(function(sz) {
+              var btn = document.createElement('button');
+              btn.className = 'pick-btn';
+              btn.textContent = sz;
+              btn.dataset.variant = sizesObj[sz];
+              container.appendChild(btn);
+            });
+          }
+        });
+      });
+
+      // Auto-select first color
+      if (swatchEls.length) {
+        swatchEls[0].style.outline = '2px solid #fff';
+        swatchEls[0].style.outlineOffset = '2px';
+      }
+    })
+    .catch(function() {});
+  }
+
+  document.querySelectorAll('.product-card').forEach(function(card) {
+    fetchAndBuildSwatches(card);
+  });
+})();
+</script></body>
 </html>

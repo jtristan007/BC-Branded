@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Athletic Wear — BC Branded Co.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --cream: #f5f0e8;
+  --dark:  #0e0f0c;
+  --forest:#1a2518;
+  --pine:  #2d3d28;
+  --gold:  #c8a84b;
+  --orange: #E8541A;
+  --orange-light: #f07040;
+  --orange-dim: rgba(232,84,26,0.18);
+  --mist:  #8a9e8c;
+  --radius: 16px;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--dark);
+  color: var(--cream);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 40px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14,15,12,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.nav-logo {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--cream);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--orange); }
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(245,240,232,0.6);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--cream); }
+.nav-back svg { width: 16px; height: 16px; }
+.nav-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--orange);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-shop-btn:hover { background: var(--orange-light); }
+
+/* ── HERO BANNER ── */
+.collection-hero {
+  margin-top: 68px;
+  padding: 72px 40px 56px;
+  background: linear-gradient(135deg, #0e0f0c 0%, #1a1208 50%, #0e0f0c 100%);
+  border-bottom: 1px solid rgba(232,84,26,0.12);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.collection-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(232,84,26,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-text { flex: 1; min-width: 0; }
+.hero-product-img {
+  flex-shrink: 0;
+  width: 280px;
+  position: relative;
+  z-index: 1;
+}
+.hero-product-img img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+@media (max-width: 768px) {
+  .hero-product-img { display: none; }
+  .collection-hero { display: block; }
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-dim);
+  border: 1px solid rgba(232,84,26,0.3);
+  border-radius: 50px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 20px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--orange);
+  border-radius: 50%;
+}
+.collection-hero h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.collection-hero h1 span { color: var(--orange); }
+.collection-hero p {
+  font-size: 16px;
+  color: rgba(245,240,232,0.6);
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+}
+.hero-stat-num {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--orange);
+}
+.hero-stat-lbl {
+  font-size: 11px;
+  color: rgba(245,240,232,0.45);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  padding: 24px 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+}
+.filter-btn {
+  padding: 7px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: transparent;
+  color: rgba(245,240,232,0.6);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.filter-btn:hover { border-color: rgba(232,84,26,0.4); color: var(--cream); }
+.filter-btn.active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+.filter-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: rgba(245,240,232,0.35);
+  white-space: nowrap;
+}
+
+/* ── PRODUCTS GRID ── */
+.products-section {
+  padding: 48px 40px 80px;
+}
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 700px)  { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ── PRODUCT CARD ── */
+.product-card {
+  background: #141512;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s, transform 0.3s;
+  }
+.product-card.visible {
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s;
+}
+.product-card:hover {
+  border-color: rgba(232,84,26,0.25);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.product-img {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #1a1a18;
+}
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+.product-img.light-product img {
+  object-fit: contain;
+  padding: 16px;
+  background: #1c1c1a;
+}
+.product-card:hover .product-img img { transform: scale(1.04); }
+
+/* overlay with size/color picker */
+.product-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,11,9,0.88);
+  display: flex;
+  align-items: flex-end;
+  
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.product-card:hover .product-img-overlay { opacity: 1; }
+.picker { padding: 16px; width: 100%; }
+.picker-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.picker-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  justify-content: flex-start;
+}
+.pick-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: var(--cream);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+.pick-btn:hover, .pick-btn.loading {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+/* product info */
+.product-info {
+  padding: 16px 18px 18px;
+}
+.product-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 5px;
+}
+.product-name {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--cream);
+}
+.product-colors {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 80px;
+}
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.new-badge {
+  display: inline-block;
+  background: var(--orange);
+  color: #fff;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 50px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 40px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--cream);
+}
+.footer-logo span { color: var(--orange); }
+.footer-copy {
+  font-size: 12px;
+  color: rgba(245,240,232,0.35);
+}
+.footer-link {
+  color: rgba(245,240,232,0.5);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--orange); }
+
+.overlay-bottom {
+  width: 100%;
+  padding: 10px 12px 13px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.78));
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.product-card:hover .overlay-bottom {
+  opacity: 1;
+  transform: translateY(0);
+}
+.overlay-colors {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ov-color-label {
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  margin-right: 2px;
+}
+</style>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<a class="nav-back" href="index.html">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"></path></svg>
+    Back to Home
+  </a>
+<a class="nav-logo" href="index.html">BC<span>.</span>Branded</a>
+<a class="nav-shop-btn" href="https://an7pix-mc.myshopify.com/collections/all" target="_blank">Shop All →</a>
+</nav>
+<!-- HERO -->
+<section class="collection-hero">
+<div class="hero-text">
+<div class="hero-eyebrow">Athletic Collection</div>
+<h1>Built for the<br/><span>West Coast</span></h1>
+<p>Performance streetwear designed for those who live boldly and move freely. Inspired by British Columbia.</p>
+<div class="hero-stats">
+<div>
+<div class="hero-stat-num">17</div>
+<div class="hero-stat-lbl">Styles</div>
+</div>
+<div>
+<div class="hero-stat-num">6+</div>
+<div class="hero-stat-lbl">Colorways</div>
+</div>
+<div>
+<div class="hero-stat-num">Free</div>
+<div class="hero-stat-lbl">Shipping $150+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FILTER BAR -->
+<div class="filter-bar">
+<button class="filter-btn active" data-filter="all">All</button>
+<button class="filter-btn" data-filter="hoodie">Hoodies</button>
+<button class="filter-btn" data-filter="jacket">Jackets</button>
+<button class="filter-btn" data-filter="sweatpants">Sweatpants</button>
+<button class="filter-btn" data-filter="tank">Tanks &amp; Shorts</button>
+<button class="filter-btn" data-filter="hat">Hats &amp; Beanies</button>
+<button class="filter-btn" data-filter="womens">Women's</button>
+<button class="filter-btn" data-filter="kids">Kids</button>
+<span class="filter-count">19 products</span>
+</div>
+<!-- PRODUCTS -->
+<section class="products-section">
+<div class="products-grid"><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="BC Branded Athletics Designer Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-pigment-dyed-hoodie-pigment-black-front-6a2dc40970cb4.jpg?v=1781384223"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-embroidered-logo" data-variants='{"S":"52997934383413","M":"52997934416181","L":"52997934448949","XL":"52997934481717","2XL":"52997934514485","3XL":"52997934547253"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a1a1a" title="Pigment Black"></div><div class="swatch" style="background:#4a6741" title="Pigment Alpine Green"></div><div class="swatch" style="background:#7a2a2a" title="Pigment Maroon"></div><div class="swatch" style="background:#4a5f7a" title="Pigment Slate Blue"></div><div class="swatch" style="background:#c97a8a" title="Pigment Pink"></div><div class="swatch" style="background:#7aaac7" title="Pigment Light Blue"></div></div><div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Designer<br/>Pigment Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$99.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img light-product">
+<img alt="Champion Vancouver Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-champion-powerblend-hoodie-light-steel-front-6a1450977ab9c.jpg?v=1779716270"/>
+<div class="product-img-overlay" data-handle="bc-branded-vancouver-special-edition-hoodie" data-variants='{"S":"52922647347509","M":"52922647380277","L":"52922647413045","XL":"52922647445813","2XL":"52922647281973","3XL":"52922647314741"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#b8bfc7" title="Light Steel"></div></div><div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Athletics · Champion</div>
+<div class="product-name">Vancouver Designer<br/>Hoodie by Champion</div>
+<div class="product-bottom">
+<div class="product-price">$74.95</div>
+</div>
+</div></div><div class="product-card" data-cat="jacket"><div class="product-img">
+<img alt="Champion Packable Adventure Jacket" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-champion-packable-anorak-royal-blue-zoomed-in-6a2f415d662fe.jpg?v=1781481834"/>
+<div class="product-img-overlay" data-handle="bc-branded-champion-packable-adventure-jacket-with-embroidered-logo" data-variants='{"S":"53000507752757","M":"53000507785525","L":"53000507818293","XL":"53000507851061","2XL":"53000507883829"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#2040a0" title="Royal Blue"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Jacket · Champion <span class="new-badge">New</span></div>
+<div class="product-name">Champion Packable<br/>Adventure Jacket</div>
+<div class="product-bottom">
+<div class="product-price">$99.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie"><div class="product-img">
+<img alt="Athletics Premium Crewneck" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-sweatshirt-white-left-front-6a2f3b7e5d232.jpg?v=1781480339"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-premium-crewneck-sweatshirt" data-variants='{"S":"53000480620853","M":"53000480653621","L":"53000480686389","XL":"53000480719157","2XL":"53000480555317","3XL":"53000480588085"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#f0ece4" title="White"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Crewneck <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Premium<br/>Crewneck Sweatshirt</div>
+<div class="product-bottom">
+<div class="product-price">$69.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie womens"><div class="product-img">
+<img alt="Athletic Performance Crop Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/womens-cropped-hoodie-black-front-6a2f42bb49155.jpg?v=1781482181"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletic-performance-crop-hoodie" data-variants='{"S":"53000514240821","M":"53000514273589","L":"53000514306357","XL":"53000514339125","2XL":"53000514371893"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Women's Hoodie <span class="new-badge">New</span></div>
+<div class="product-name">Athletic Performance<br/>Crop Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tank womens"><div class="product-img">
+<img alt="Women's V-Neck Athletics Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/womens-relaxed-v-neck-t-shirt-turquoise-front-6a2f4513986f4.jpg?v=1781482782"/>
+<div class="product-img-overlay" data-handle="bc-branded-women-s-iconic-v-neck-athletics-tee" data-variants='{"S":"53000525152565","M":"53000525185333","L":"53000525218101","XL":"53000525250869","2XL":"53000525283637"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#40b0b0" title="Turquoise"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Women's Tee <span class="new-badge">New</span></div>
+<div class="product-name">Women's Iconic<br/>V-Neck Athletics Tee</div>
+<div class="product-bottom">
+<div class="product-price">$49.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tank"><div class="product-img">
+<img alt="Athletics Performance Tank" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-muscle-shirt-black-front-6a2f35781c9a8.jpg?v=1781478788"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-performance-tank" data-variants='{"S":"53000452505909","M":"53000452538677","L":"53000452571445","XL":"53000452604213","2XL":"53000452636981"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Tank <span class="new-badge">New</span></div>
+<div class="product-name">Athletics<br/>Performance Tank</div>
+<div class="product-bottom">
+<div class="product-price">$49.99</div>
+</div>
+</div></div><div class="product-card" data-cat="tank"><div class="product-img">
+<img alt="Men's Fleece Athletic Shorts" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/mens-fleece-shorts-black-left-front-6a2f6c3188e8b.jpg?v=1781492795"/>
+<div class="product-img-overlay" data-handle="bc-branded-men-s-iconic-fleece-athletic-shorts" data-variants='{"S":"53001805103413","M":"53001805136181","L":"53001805168949","XL":"53001805201717","2XL":"53001805234485"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#111310" title="Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Shorts <span class="new-badge">New</span></div>
+<div class="product-name">Men's Iconic<br/>Fleece Athletic Shorts</div>
+<div class="product-bottom">
+<div class="product-price">$59.99</div>
+</div>
+</div></div><div class="product-card" data-cat="sweatpants"><div class="product-img">
+<img alt="Athletics Fleece Sweatpants" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-fleece-sweatpants-charcoal-heather-front-6a2f384f95642.jpg?v=1781479515"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-fleece-sweatpants" data-variants='{"XS":"53000465416501","S":"53000465449269","M":"53000465482037","L":"53000465514805","XL":"53000465350965","2XL":"53000465383733"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#5a5a58" title="Charcoal Heather"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Sweatpants <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Fleece<br/>Sweatpants</div>
+<div class="product-bottom">
+<div class="product-price">$69.99</div>
+</div>
+</div></div><div class="product-card" data-cat="sweatpants"><div class="product-img">
+<img alt="Athletics Pigment-Dyed Sweatpants" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-pigment-dyed-sweatpants-pigment-black-product-details-6a2f32801c650.jpg?v=1781478029"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-pigment-dyed-sweatpants" data-variants='{"S":"53000423768373","M":"53000423801141","L":"53000423833909","XL":"53000423866677","2XL":"53000423899445"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a1a1a" title="Pigment Black"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Sweatpants <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Pigment-Dyed<br/>Sweatpants</div>
+<div class="product-bottom">
+<div class="product-price">$99.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hat"><div class="product-img">
+<img alt="Athletic Structured Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/closed-back-structured-cap-white-front-6a2f3e28e73ed.jpg?v=1781481017"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletic-structured-cap-by-flexfit" data-variants='{"S/M":"53000494186805","L/XL":"53000494219573"}'><div class="overlay-bottom"><div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#f0ece4" title="White"></div></div><div class="picker"><div class="picker-label">Select Size</div><div class="picker-options"></div></div>
+</div>
+</div>
+</div><div class="product-info">
+<div class="product-type">Cap · Flexfit <span class="new-badge">New</span></div>
+<div class="product-name">Athletic Structured<br/>Cap by Flexfit</div>
+<div class="product-bottom">
+<div class="product-price">$49.99</div>
+</div>
+</div></div><div class="product-card" data-cat="hoodie">
+<div class="product-img">
+<img alt="Athletics Premium Quarter-Zip" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-quarter-zip-sweatshirt-heather-grey-front-6a30c38550a4a.jpg?v=1781580685"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-premium-quarter-zip" data-variants='{"S": "53004880609589", "M": "53004880642357", "L": "53004880675125", "XL": "53004880707893", "2XL": "53004880740661", "3XL": "53004880773429"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#505055" title="Smoke"></div><div class="swatch" style="background:#9a9a9a" title="Heather Grey"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Premium<br/>Quarter-Zip</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="hoodie">
+<div class="product-img">
+<img alt="Athletics Signature Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-premium-pullover-hoodie-carbon-grey-front-6a332e2e5e364.jpg?v=1781739076"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-signature-hoodie" data-variants='{"S": "53010358894901", "M": "53010358927669", "L": "53010358960437", "XL": "53010358993205", "2XL": "53010359025973", "3XL": "53010359058741"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors"><span class="ov-color-label">Color</span><div class="swatch" style="background:#1a2a4a" title="Navy Blazer"></div><div class="swatch" style="background:#7a2a2a" title="Maroon"></div><div class="swatch" style="background:#505050" title="Charcoal Heather"></div><div class="swatch" style="background:#2a2828" title="Vintage Black"></div><div class="swatch" style="background:#1a4a9a" title="Team Royal"></div><div class="swatch" style="background:#6a4a8a" title="Purple"></div><div class="swatch" style="background:#2d4a2a" title="Forest Green"></div><div class="swatch" style="background:#4a5a3a" title="Military Green"></div><div class="swatch" style="background:#8b1a1a" title="Team Red"></div></div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Signature<br/>Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$69.99</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="hoodie">
+<div class="product-img">
+<img alt="Athletics Women's Cropped Hoodie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/womens-cropped-hoodie-storm-front-6a3332c80d9b8.jpg?v=1781740248"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-womens-cropped-hoodie" data-variants='{"S": "53010379604277", "M": "53010379637045", "L": "53010379669813", "XL": "53010379702581", "2XL": "53010379735349"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#111111" title="Black"></div><div class="swatch" style="background:#4a5a3a" title="Military Green"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Women's<br/>Cropped Hoodie</div>
+<div class="product-bottom">
+<div class="product-price">$69.99</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="hat">
+<div class="product-img">
+<img alt="Athletic Cuffed Beanie | Yupoong" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/cuffed-beanie-dark-grey-front-6a35d6e8eae41.jpg?v=1781913333"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletic-cuffed-beanie-yupoong" data-variants='{"One Size": "53020460515637"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#4a4a4a" title="Dark Grey"></div><div class="swatch" style="background:#1a4a9a" title="Royal"></div><div class="swatch" style="background:#8b1a1a" title="Red"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletic Cuffed<br/>Beanie</div>
+<div class="product-bottom">
+<div class="product-price">$44.99</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="tee">
+<div class="product-img">
+<img alt="Athletics Heavyweight Garment-Dyed Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-garment-dyed-heavyweight-long-sleeve-shirt-violet-front-6a35676fac3ac.jpg?v=1781884799"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-heavyweight-garment-dyed-tee" data-variants='{"S": "53016518230325", "M": "53016518263093", "L": "53016518295861", "XL": "53016518328629", "2XL": "53016518361397"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#111111" title="Black"></div><div class="swatch" style="background:#1a2a4a" title="Navy"></div><div class="swatch" style="background:#7aaac7" title="Blue Jean"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Heavyweight<br/>Garment-Dyed Tee</div>
+<div class="product-bottom">
+<div class="product-price">$69.99</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="tee">
+<div class="product-img">
+<img alt="Athletics Summit Series™ Heavyweight Tee" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/unisex-garment-dyed-heavyweight-long-sleeve-shirt-black-front-6a359ca416114.jpg?v=1781898425"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletics-summit-series™-heavyweight-tee" data-variants='{"S": "53018465370421", "M": "53018465403189", "L": "53018465435957", "XL": "53018465468725", "2XL": "53018465501493"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#111111" title="Black"></div><div class="swatch" style="background:#1a2a4a" title="Navy"></div><div class="swatch" style="background:#7aaac7" title="Blue Jean"></div><div class="swatch" style="background:#7aaa8a" title="Light Green"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletics Summit Series™<br/>Heavyweight Tee</div>
+<div class="product-bottom">
+<div class="product-price">$79.99</div>
+</div>
+</div>
+</div>
+<div class="product-card" data-cat="hat">
+<div class="product-img">
+<img alt="BC Branded Athletic Closed-Back Structured Cap" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/closed-back-structured-cap-white-front-6a35d5cf1f8a1.jpg?v=1781913053"/>
+<div class="product-img-overlay" data-handle="bc-branded-athletic-closed-back-structured-cap-by-flexfit" data-variants='{"Multicam Black": "53020458287413", "Royal Blue": "53020458352949", "Red": "53020458418485", "Olive": "53020458484021"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#2a2a1a" title="Multicam Black"></div><div class="swatch" style="background:#1a4a9a" title="Royal Blue"></div><div class="swatch" style="background:#8b1a1a" title="Red"></div><div class="swatch" style="background:#4a5a2a" title="Olive"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Athletic Closed-Back<br/>Structured Cap</div>
+<div class="product-bottom">
+<div class="product-price">$50.00</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="hat">
+<div class="product-img">
+<img alt='The BC Branded "Stay Wild" Cuff Beanie' loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/cuffed-beanie-black-front-6a10ab1af0e30.jpg?v=1779477286"/>
+<div class="product-img-overlay" data-handle="the-bc-branded-stay-wild-cuff-beanie-1" data-variants='{"Black": "52913836556597", "Navy": "52913836589365", "Dark Grey": "52913836622133", "Royal": "52913836654901"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#111111" title="Black"></div><div class="swatch" style="background:#1a2a4a" title="Navy"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey"></div><div class="swatch" style="background:#1a4a9a" title="Royal"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">Stay Wild Cuff<br/>Beanie</div>
+<div class="product-bottom">
+<div class="product-price">$34.99</div>
+</div>
+</div>
+</div><div class="product-card" data-cat="hat">
+<div class="product-img">
+<img alt="BC Branded Cuffed Beanie" loading="lazy" src="https://cdn.shopify.com/s/files/1/1001/4012/2421/files/cuffed-beanie-black-front-6a10a9316e89e.jpg?v=1779476797"/>
+<div class="product-img-overlay" data-handle="cuffed-beanie" data-variants='{"Black": "52913818468661", "Dark Grey": "52913818501429", "Olive": "52913818534197", "Heather Grey": "52913818566965"}'>
+<div class="overlay-bottom">
+<div class="overlay-colors">
+<span class="ov-color-label">Color</span>
+<div class="swatch" style="background:#111111" title="Black"></div><div class="swatch" style="background:#4a4a4a" title="Dark Grey"></div><div class="swatch" style="background:#4a5a2a" title="Olive"></div><div class="swatch" style="background:#b0b0a0" title="Heather Grey"></div>
+</div>
+<div class="picker">
+<div class="picker-label">Select Size</div>
+<div class="picker-options"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="product-info">
+<div class="product-type">Athletics <span class="new-badge">New</span></div>
+<div class="product-name">BC Branded<br/>Cuffed Beanie</div>
+<div class="product-bottom">
+<div class="product-price">$34.99</div>
+</div>
+</div>
+</div></div></section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-logo">BC<span>.</span>Branded Co.</div>
+<div class="footer-copy">© 2025 BC Branded Co. · Surrey, BC Canada</div>
+<a class="footer-link" href="index.html">← Back to Main Site</a>
+</footer>
+<script>
+(function() {
+  var DOMAIN = 'an7pix-mc.myshopify.com';
+  var TOKEN  = 'fea71cefe8f94954fd6805e9de531307';
+
+  // Animate cards on scroll
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.product-card').forEach(function(el) { io.observe(el); });
+
+  // Build picker buttons from data-variants
+  document.querySelectorAll('.product-img-overlay').forEach(function(overlay) {
+    var variants = JSON.parse(overlay.dataset.variants || '{}');
+    var container = overlay.querySelector('.picker-options');
+    Object.keys(variants).forEach(function(key) {
+      var btn = document.createElement('button');
+      btn.className = 'pick-btn';
+      btn.textContent = key;
+      btn.dataset.variant = variants[key];
+      container.appendChild(btn);
+    });
+  });
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.dataset.filter;
+      document.querySelectorAll('.product-card').forEach(function(card) {
+        if (filter === 'all' || card.dataset.cat === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Handle picker button clicks → cartCreate → checkout
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('.pick-btn');
+    if (!btn) return;
+    e.stopPropagation();
+    var variantId = btn.dataset.variant;
+    var origText = btn.textContent;
+    btn.classList.add('loading');
+    btn.textContent = '…';
+
+    // Direct Shopify cart URL — always works regardless of custom domain
+    window.location.href = 'https://an7pix-mc.myshopify.com/cart/' + variantId + ':1?storefront=true';
+  });
+})();
+</script>
+<script>
+// ── COLOR SWATCH SWITCHER (dynamic, loads all colors from Shopify) ──
+(function() {
+  var DOMAIN = 'an7pix-mc.myshopify.com';
+  var TOKEN  = 'fea71cefe8f94954fd6805e9de531307';
+
+  // Color name → hex mapping
+  var COLOR_HEX = {
+    'black':'#111111','vintage black':'#2a2828','solid black blend':'#1a1a1a',
+    'white':'#f5f5f5','cream':'#f0ece4','natural':'#e8e0d0',
+    'forest green':'#2d4a2a','military green':'#4a5a3a','agave':'#7aaa8a','pine':'#2d3d28',
+    'alpine green':'#4a6741','pigment alpine green':'#4a6741',
+    'navy':'#1a2a4a','heather navy':'#2a3a5a','slate blue':'#4a5f7a','pigment slate blue':'#4a5f7a','heather slate':'#606878',
+    'grey':'#6a6a6a','gray':'#6a6a6a','carbon grey':'#4a4a4a','dark grey heather':'#505050','storm':'#607080','charcoal':'#3a3a3a',
+    'red':'#8b1a1a','team red':'#8b1a1a','maroon':'#7a2a2a','pigment maroon':'#7a2a2a','berry':'#7a2a4a',
+    'pink':'#e88aa0','pigment pink':'#c97a8a','dusty rose':'#d4908a','peach':'#e8a878','heather mauve':'#c890a0',
+    'blue':'#3a6aaa','light blue':'#7aaac7','pigment light blue':'#7aaac7','turquoise':'#40b0b0',
+    'orange':'#E8541A','adobe':'#c87048',
+    'brown':'#8a6a4a','latte':'#c8a87a','khaki':'#b8a878','tan':'#c8a870',
+    'purple':'#6a4a8a','lavender':'#b0a0c8',
+    'yellow':'#d4b840','gold':'#c8a84b'
+  };
+
+  function getHex(colorName) {
+    var key = colorName.toLowerCase();
+    if (COLOR_HEX[key]) return COLOR_HEX[key];
+    for (var k in COLOR_HEX) {
+      if (key.indexOf(k) !== -1 || k.indexOf(key) !== -1) return COLOR_HEX[k];
+    }
+    return '#888888';
+  }
+
+  function fetchAndBuildSwatches(card) {
+    var overlay = card.querySelector('.product-img-overlay');
+    if (!overlay || !overlay.dataset.handle) return;
+    var handle = overlay.dataset.handle;
+
+    fetch('https://' + DOMAIN + '/api/2024-01/graphql.json', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Shopify-Storefront-Access-Token': TOKEN },
+      body: JSON.stringify({ query:
+        '{ product(handle: "' + handle + '") { variants(first: 50) { edges { node { id selectedOptions { name value } image { url } } } } } }'
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var edges = data.data && data.data.product && data.data.product.variants.edges || [];
+
+      // Build color map: colorName → { image, sizes: {S: variantId, ...} }
+      var colors = {};
+      var colorOrder = [];
+      edges.forEach(function(e) {
+        var opts = {};
+        e.node.selectedOptions.forEach(function(o) { opts[o.name] = o.value; });
+        var color = opts['Color'] || opts['Colour'] || '';
+        var size  = opts['Size']  || '';
+        var vid   = e.node.id.split('/').pop();
+        var img   = e.node.image ? e.node.image.url : '';
+        if (!color) return;
+        if (!colors[color]) { colors[color] = { image: img, sizes: {} }; colorOrder.push(color); }
+        if (size) colors[color].sizes[size] = vid;
+      });
+
+      if (colorOrder.length < 1) return;
+
+      // Find or create the overlay-colors container
+      var overlayBottom = overlay.querySelector('.overlay-bottom');
+      if (!overlayBottom) return;
+      var colorsDiv = overlayBottom.querySelector('.overlay-colors');
+      if (!colorsDiv) {
+        colorsDiv = document.createElement('div');
+        colorsDiv.className = 'overlay-colors';
+        overlayBottom.insertBefore(colorsDiv, overlayBottom.firstChild);
+      }
+
+      // Rebuild swatches
+      colorsDiv.innerHTML = '<span class="ov-color-label">Color</span>';
+      var swatchEls = [];
+
+      colorOrder.forEach(function(colorName, idx) {
+        var sw = document.createElement('div');
+        sw.className = 'swatch';
+        sw.title = colorName;
+        sw.style.background = getHex(colorName);
+        sw.style.border = '2px solid rgba(255,255,255,0.6)';
+        sw.style.width = '14px';
+        sw.style.height = '14px';
+        sw.style.borderRadius = '50%';
+        sw.style.cursor = 'pointer';
+        sw.style.flexShrink = '0';
+        colorsDiv.appendChild(sw);
+        swatchEls.push(sw);
+
+        sw.addEventListener('click', function(e) {
+          e.stopPropagation();
+
+          // Highlight selected
+          swatchEls.forEach(function(s) { s.style.outline = ''; s.style.outlineOffset = ''; });
+          sw.style.outline = '2px solid #fff';
+          sw.style.outlineOffset = '2px';
+
+          // Swap image
+          var img = card.querySelector('.product-img img');
+          if (img && colors[colorName].image) img.src = colors[colorName].image;
+
+          // Rebuild size buttons for this color
+          var container = overlay.querySelector('.picker-options, .size-options');
+          if (container) {
+            container.innerHTML = '';
+            var sizesObj = colors[colorName].sizes;
+            Object.keys(sizesObj).forEach(function(sz) {
+              var btn = document.createElement('button');
+              btn.className = 'pick-btn';
+              btn.textContent = sz;
+              btn.dataset.variant = sizesObj[sz];
+              container.appendChild(btn);
+            });
+          }
+        });
+      });
+
+      // Auto-select first color
+      if (swatchEls.length) {
+        swatchEls[0].style.outline = '2px solid #fff';
+        swatchEls[0].style.outlineOffset = '2px';
+      }
+    })
+    .catch(function() {});
+  }
+
+  document.querySelectorAll('.product-card').forEach(function(card) {
+    fetchAndBuildSwatches(card);
+  });
+})();
+</script></body>
+</html>
